@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "235416198491",
+    "firebase_url": "https://monitoriasufrn.firebaseio.com",
+    "project_id": "monitoriasufrn",
+    "storage_bucket": "monitoriasufrn.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:235416198491:android:41ee40da9a8d6501",
+        "android_client_info": {
+          "package_name": "totabraz.com.monitoriasufrn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "235416198491-h0dg4c61lm2enuoqmek66geeb26r1n28.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "totabraz.com.monitoriasufrn",
+            "certificate_hash": "4e9ec6d219545a93e92af2bb7d5180fbf1b8ac38"
+          }
+        },
+        {
+          "client_id": "235416198491-rkhpjl10o7c3574piahk6lt2c415nbqv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTdPyGo4MVUSEo27lBMk2HtVBXAIYBEKE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "235416198491-rkhpjl10o7c3574piahk6lt2c415nbqv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
