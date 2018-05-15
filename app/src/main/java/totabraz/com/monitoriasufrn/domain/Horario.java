@@ -1,4 +1,4 @@
-package totabraz.com.monitoriasufrn.domains;
+package totabraz.com.monitoriasufrn.domain;
 
 public class Horario {
     private int dia;

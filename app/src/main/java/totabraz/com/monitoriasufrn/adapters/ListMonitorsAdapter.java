@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import totabraz.com.monitoriasufrn.R;
-import totabraz.com.monitoriasufrn.domains.Monitor;
+import totabraz.com.monitoriasufrn.domain.Monitor;
 
 public class ListMonitorsAdapter extends RecyclerView.Adapter<ListMonitorsAdapter.Holder> {
     private ArrayList<Monitor> monitors;

@@ -17,7 +17,7 @@ import java.util.Map;
 
 import totabraz.com.monitoriasufrn.activities.setup.LoginActivity;
 import totabraz.com.monitoriasufrn.apisinfo.JApi;
-import totabraz.com.monitoriasufrn.domains.User;
+import totabraz.com.monitoriasufrn.domain.User;
 
 public abstract class SysUtils {
 

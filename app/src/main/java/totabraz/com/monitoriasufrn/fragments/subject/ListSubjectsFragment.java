@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 import totabraz.com.monitoriasufrn.R;
-import totabraz.com.monitoriasufrn.domains.Subject;
+import totabraz.com.monitoriasufrn.domain.Subject;
 import totabraz.com.monitoriasufrn.utils.SysUtils;
 
 

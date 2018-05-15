@@ -23,8 +23,8 @@ import java.util.List;
 import totabraz.com.monitoriasufrn.R;
 
 import totabraz.com.monitoriasufrn.dao.FirebaseDao;
-import totabraz.com.monitoriasufrn.domains.User;
-import totabraz.com.monitoriasufrn.domains.Vinculo;
+import totabraz.com.monitoriasufrn.domain.User;
+import totabraz.com.monitoriasufrn.domain.Vinculo;
 import totabraz.com.monitoriasufrn.utils.ApiUtils;
 import totabraz.com.monitoriasufrn.utils.SysUtils;
 

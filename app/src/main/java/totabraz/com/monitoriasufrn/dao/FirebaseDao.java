@@ -15,10 +15,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-
 import totabraz.com.monitoriasufrn.activities.MainActivity;
-import totabraz.com.monitoriasufrn.domains.User;
+import totabraz.com.monitoriasufrn.domain.User;
 import totabraz.com.monitoriasufrn.utils.SysUtils;
 
 /**

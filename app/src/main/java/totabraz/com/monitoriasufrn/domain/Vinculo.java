@@ -1,4 +1,4 @@
-package totabraz.com.monitoriasufrn.domains;
+package totabraz.com.monitoriasufrn.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
