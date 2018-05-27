@@ -15,6 +15,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+import io.paperdb.Paper;
 import totabraz.com.monitoriasufrn.activities.setup.LoginActivity;
 import totabraz.com.monitoriasufrn.apisinfo.JApi;
 import totabraz.com.monitoriasufrn.domain.User;
@@ -22,6 +23,7 @@ import totabraz.com.monitoriasufrn.domain.User;
 public abstract class SysUtils {
 
     public static final HashMap<Integer, String> dias = (HashMap<Integer, String>) createDias();
+
     private static Map<Integer, String> createDias(){
         Map<Integer, String> mDias = new HashMap<Integer, String>();
         mDias.put(1,"Domingo");
@@ -53,7 +55,7 @@ public abstract class SysUtils {
     public static final String CHILD_STUDENTS = PRIVATE_ROOT +"/users/students/";
 
     public static final String CHILD_SUBJECTS = PUBLIC_ROOT + "/subjects/";
-    public static final String CHILD_USERS = PRIVATE_ROOT + "/user";
+    public static final String CHILD_USERS = PRIVATE_ROOT + "/users/";
 
     public String getChildProfSubjects(String fbUserID){
         return PRIVATE_ROOT +"/users/professors/" + fbUserID + "/subjects/";
@@ -106,14 +108,6 @@ public abstract class SysUtils {
     }
 
 
-    public static void setLocalUser(Activity activity, User user) {
-//        SharedPreferences appSharedPrefs = PreferenceManager.getDefaultSharedPreferences(activity.getApplicationContext());
-//        SharedPreferences.Editor prefsEditor = appSharedPrefs.edit();
-//        Gson gson = new Gson();
-//        String json = gson.toJson(user);
-//        prefsEditor.putString(SysUtils.CHILD_USERS, json);
-//        prefsEditor.commit();
-    }
 
 //    public static User getLocalUser(Activity activity) {
 //        Singleton singleton = Singleton.getInstance();

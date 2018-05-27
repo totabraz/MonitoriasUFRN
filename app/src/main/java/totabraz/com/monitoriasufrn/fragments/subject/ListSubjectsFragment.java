@@ -3,6 +3,7 @@ package totabraz.com.monitoriasufrn.fragments.subject;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -19,8 +21,14 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import io.paperdb.Paper;
 import totabraz.com.monitoriasufrn.R;
+import totabraz.com.monitoriasufrn.activities.MainActivity;
+import totabraz.com.monitoriasufrn.dao.UserDao;
 import totabraz.com.monitoriasufrn.domain.Subject;
+import totabraz.com.monitoriasufrn.domain.User;
+import totabraz.com.monitoriasufrn.services.SubjectService;
+import totabraz.com.monitoriasufrn.services.TurmaService;
 import totabraz.com.monitoriasufrn.utils.SysUtils;
 
 
@@ -30,9 +38,11 @@ public class ListSubjectsFragment extends Fragment {
     private TextView tvNothingToShow;
     private RecyclerView rvMyList;
     private Button btnAdd;
-    private ProgressBar progressbar;
+    private ProgressBar progress;
     private ArrayList<Subject> subjects;
     private DatabaseReference myDatabase;
+    private TextInputEditText tiCodedigoComponente;
+
 
 
     public ListSubjectsFragment() {
@@ -61,7 +71,17 @@ public class ListSubjectsFragment extends Fragment {
         rootView = inflater.inflate(R.layout.fragment_list_subjects, container, false);
         this.setupViews();
         getComponents();
+        init();
         return rootView;
+    }
+
+    private void init() {
+        User user = Paper.book().read("user");
+        if (user.getVinculos().size()>0){
+            SubjectService subjectService = new SubjectService((MainActivity) getActivity(),user.getVinculos().get(0).getIdVinculo(), subjects);
+        } else {
+            Toast.makeText((MainActivity) getActivity().getApplicationContext(), "Erro ao carregar vinculos", Toast.LENGTH_SHORT).show();
+        }
     }
 
 
@@ -69,32 +89,39 @@ public class ListSubjectsFragment extends Fragment {
      * VIEW's SETUPS
      */
     private void showProgress() {
-        progressbar.setVisibility(View.VISIBLE);
+        progress.setVisibility(View.VISIBLE);
         tvNothingToShow.setVisibility(View.GONE);
         rvMyList.setVisibility(View.GONE);
     }
 
     private void showList() {
         rvMyList.setVisibility(View.VISIBLE);
-        progressbar.setVisibility(View.GONE);
+        progress.setVisibility(View.GONE);
         tvNothingToShow.setVisibility(View.GONE);
     }
 
     private void showText() {
         tvNothingToShow.setVisibility(View.VISIBLE);
-        progressbar.setVisibility(View.GONE);
+        progress.setVisibility(View.GONE);
         rvMyList.setVisibility(View.GONE);
     }
 
     private void setupViews() {
         tvNothingToShow = rootView.findViewById(R.id.tvNothingToShow);
         rvMyList = rootView.findViewById(R.id.rvMyList);
-        progressbar = rootView.findViewById(R.id.progress);
+        progress = rootView.findViewById(R.id.progress);
+        tiCodedigoComponente = rootView.findViewById(R.id.tiCodedigoComponente);
         btnAdd = rootView.findViewById(R.id.btnAdd);
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                String component = tiCodedigoComponente.getText().toString();
+                String mainVinculo = UserDao.getVinculoDefault(getActivity().getApplicationContext());
+                if (component.length()<3) {
+                    TurmaService turmaService = new TurmaService(getActivity(), mainVinculo ,component);
+                    Subject subject =  turmaService.getTurma();
+                    Toast.makeText(getActivity().getApplicationContext(), subject.getNomeComponente(),Toast.LENGTH_SHORT).show();
+                }
             }
         });
         showProgress();

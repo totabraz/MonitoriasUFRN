@@ -26,7 +26,7 @@ public class ListMonitorsAdapter extends RecyclerView.Adapter<ListMonitorsAdapte
     @NonNull
     @Override
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cardview_layout, null);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cardview_layout_btn_x, null);
         return new Holder(view);
     }
 

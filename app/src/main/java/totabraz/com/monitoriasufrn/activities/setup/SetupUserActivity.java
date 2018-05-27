@@ -17,6 +17,5 @@ public class SetupUserActivity extends AppCompatActivity {
          */
         UserService userService = new UserService(this);
         userService.getUser();
-
     }
 }

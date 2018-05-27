@@ -17,18 +17,20 @@
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activities.subjects.SubjectActivity" />
         <activity android:name=".activities.setup.LoginActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.setup.SetupUserActivity"></activity>
+        <activity android:name=".activities.setup.SetupUserActivity" />
+        <activity android:name=".activities.setup.SetupFirebaseActivity" />
+        <activity android:name=".activities.error.ErrorMsgActivity" />
+        <activity android:name=".activities.monitors.AddMonitorActivity" />
+        <activity android:name=".activities.setup.SetupMainVincloActivity"></activity>
     </application>
 
 </manifest>

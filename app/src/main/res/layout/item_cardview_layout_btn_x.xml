@@ -13,4 +13,13 @@
         android:lines="1"
         android:textStyle="bold" />
 
+    <ImageView
+        android:id="@+id/ivBtn"
+        android:src="@drawable/ic_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_xxs"
+        android:layout_gravity="center_vertical"
+        android:text="x" />
+
 </LinearLayout>

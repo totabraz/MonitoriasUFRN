@@ -26,7 +26,7 @@ public class AuthorizationTask extends AsyncTask<String, Void, OAuthResponse> {
 
     private Activity mActivity;
     private Class mClass;
-    private ProgressDialog mProgressDialog;
+//    private ProgressDialog mProgressDialog;
 
     public AsyncResponse delegate = null;
 
@@ -37,7 +37,7 @@ public class AuthorizationTask extends AsyncTask<String, Void, OAuthResponse> {
 
     @Override
     protected void onPreExecute() {
-        mProgressDialog = ProgressDialog.show(mActivity, "Sigaa Authorization", "Carregando...", true);
+//        mProgressDialog = ProgressDialog.show(mActivity, "Sigaa Authorization", "Carregando...", true);
     }
 
     @Override
@@ -70,9 +70,9 @@ public class AuthorizationTask extends AsyncTask<String, Void, OAuthResponse> {
 
     @Override
     public void onPostExecute(OAuthResponse result) {
-        if (mProgressDialog != null && mProgressDialog.isShowing()) {
-            mProgressDialog.dismiss();
-        }
+//        if (mProgressDialog != null && mProgressDialog.isShowing()) {
+//            mProgressDialog.dismiss();
+//        }
 
         delegate.processAuthorization(result);
         mActivity.startActivity(new Intent(mActivity, mClass));

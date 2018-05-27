@@ -28,15 +28,13 @@ public class FirebaseDao {
     private Activity activity;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
-    private String userCPF;
 
 
-    public FirebaseDao(Activity activity, String userCPF) {
+    public FirebaseDao(Activity activity) {
         this.activity = activity;
         this.mAuth = FirebaseAuth.getInstance();
         this.TAG = "Firebase_Dao";
         this.mDatabase = FirebaseDatabase.getInstance().getReference();
-        this.userCPF = userCPF;
     }
 
     /**
@@ -93,7 +91,7 @@ public class FirebaseDao {
     private void addUser(User user) {
         // mDatabase.child(SysUtils.FB_PRIVATE).child(SysUtils.FB_USERS).child(SysUtils.fixeCpf(user.getCpfCnpj())).setValue(user);
         mDatabase.child(SysUtils.CHILD_USERS).child(SysUtils.fixeCpf(user.getCpfCnpj())).setValue(user);
-        SysUtils.setLocalUser(activity, user);
+        UserDao.setLocalUser(activity, user);
         Intent intent = new Intent(this.activity, MainActivity.class);
         activity.startActivity(intent);
     }
@@ -103,34 +101,25 @@ public class FirebaseDao {
      * - getFirebaseUser(Usuario user)
      */
 
-    /**
-     * <ESSE/> <METODO/>  <TA/> <UMA/> <BOSTA/>.
-     * <ARRUMAR/>
-     */
     private void getFirebaseUser(User user) {
 
         ValueEventListener userListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                SysUtils.setLocalUser(activity, dataSnapshot.getValue(User.class));
-//                Singleton singleton = Singleton.getInstance();
-//                singleton.setUser(dataSnapshot.getValue(Usuario.class));
+                UserDao.setLocalUser(activity, dataSnapshot.getValue(User.class));
                 Intent intent = new Intent(activity.getApplicationContext(), MainActivity.class);
                 activity.startActivity(intent);
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
                 Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
             }
-
             @Override
             protected void finalize() throws Throwable {
                 super.finalize();
+
             }
         };
-        //Case the user from Firebase is null, it granted that user.getCpfCnpj is valid.
         mDatabase.child(SysUtils.CHILD_USERS).child(user.getCpfCnpj()).addValueEventListener(userListener);
     }
 

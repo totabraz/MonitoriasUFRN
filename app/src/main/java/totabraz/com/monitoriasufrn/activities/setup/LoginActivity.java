@@ -17,6 +17,6 @@ public class LoginActivity extends AppCompatActivity {
 
         JApi.deslogar(getApplicationContext());
         JApiWebView japiWebView = findViewById(R.id.japiwebview);
-        japiWebView.loadJapiWebView(ApiUtils.URLBASE_AUTH, ApiUtils.ID, ApiUtils.SECRET, this, SetupUserActivity.class);
+        japiWebView.loadJapiWebView(ApiUtils.URLBASE_AUTH_TEST, ApiUtils.ID, ApiUtils.SECRET, this, SetupUserActivity.class);
     }
 }

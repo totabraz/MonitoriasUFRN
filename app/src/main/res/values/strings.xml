@@ -15,4 +15,5 @@
     <string name="cadastrar_observacao">Cadastrar Observação</string>
     <string name="nothingToShow">Sem itens cadastrados</string>
     <string name="title_activity_setup_user">SetupUserActivity</string>
+    <string name="hint_codigo_componente">Código do componne. Ex.: IMD0000</string>
 </resources>

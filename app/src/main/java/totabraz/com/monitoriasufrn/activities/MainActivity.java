@@ -18,7 +18,7 @@ import android.view.animation.AnimationUtils;
 
 import totabraz.com.monitoriasufrn.R;
 import totabraz.com.monitoriasufrn.fragments.AddMonitorFragment;
-import totabraz.com.monitoriasufrn.fragments.AddObservationFragment;
+import totabraz.com.monitoriasufrn.fragments.observations.AddObservationFragment;
 import totabraz.com.monitoriasufrn.fragments.subject.ListSubjectsFragment;
 
 public class MainActivity extends AppCompatActivity
