@@ -36,46 +36,6 @@ public abstract class SysUtils {
         return mDias;
     }
 
-    /**
-     * FIREBASE CONSTANTS
-     */
-
-    /**
-     *  Firebase constants
-     */
-
-    public static final String PUBLIC_ROOT = "public";
-    public static final String SEMI_PUBLIC_ROOT = "semi_public";
-    public static final String PRIVATE_ROOT = "private";
-
-    public static final String CHILD_MONITORING = PUBLIC_ROOT + "/monitoring/";
-    public static final String CHILD_MONITOR = PRIVATE_ROOT +"/users/monitors/";
-    public static final String CHILD_PROFESSOR = PRIVATE_ROOT +"/users/professors/";
-
-    public static final String CHILD_STUDENTS = PRIVATE_ROOT +"/users/students/";
-
-    public static final String CHILD_SUBJECTS = PUBLIC_ROOT + "/subjects/";
-    public static final String CHILD_USERS = PRIVATE_ROOT + "/users/";
-
-    public String getChildProfSubjects(String fbUserID){
-        return PRIVATE_ROOT +"/users/professors/" + fbUserID + "/subjects/";
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     /**
@@ -106,24 +66,6 @@ public abstract class SysUtils {
         while (size-- > 0) cpf = "0" + cpf;
         return cpf;
     }
-
-
-
-//    public static User getLocalUser(Activity activity) {
-//        Singleton singleton = Singleton.getInstance();
-//        if (singleton.getUser() != null) return singleton.getUser();
-//        else {
-//            SharedPreferences appSharedPrefs = PreferenceManager.getDefaultSharedPreferences(activity.getApplicationContext());
-//            Gson gson = new Gson();
-//            String json = appSharedPrefs.getString(SysUtils.FB_USER, "");
-//            Usuario user = gson.fromJson(json, Usuario.class);
-//            if (user == null) {
-//                UserService userService = new UserService(activity);
-//                user = userService.getUser();
-//            }
-//            return user;
-//        }
-//    }
 
     /**
      *

@@ -24,7 +24,7 @@ import totabraz.com.monitoriasufrn.activities.error.ErrorMsgActivity;
 import totabraz.com.monitoriasufrn.dao.UserDao;
 import totabraz.com.monitoriasufrn.domain.User;
 import totabraz.com.monitoriasufrn.utils.FirebaseUtils;
-import totabraz.com.monitoriasufrn.utils.SysUtils;
+import totabraz.com.monitoriasufrn.utils.FirebaseUtils;
 
 public class SetupFirebaseActivity extends AppCompatActivity {
 
@@ -72,7 +72,7 @@ public class SetupFirebaseActivity extends AppCompatActivity {
     }
 
     private void addUser(User user) {
-        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(SysUtils.CHILD_USERS).child(user.getCpfCnpj());
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(FirebaseUtils.CHILD_USERS).child(user.getCpfCnpj());
         mDatabase.setValue(user);
         UserDao.setLocalUser(getApplicationContext(), user);
         goToNextActivity();
@@ -80,7 +80,7 @@ public class SetupFirebaseActivity extends AppCompatActivity {
     }
 
     private void getFirebaseUser(User user) {
-        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(SysUtils.CHILD_USERS).child(user.getCpfCnpj());
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(FirebaseUtils.CHILD_USERS).child(user.getCpfCnpj());
         ValueEventListener userListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -105,7 +105,7 @@ public class SetupFirebaseActivity extends AppCompatActivity {
         Intent intent;
         if (user.getVinculos().size()==1) {
             intent = new Intent(getApplicationContext(), MainActivity.class);
-            UserDao.setVinculoDefault(getApplicationContext(), user.getVinculos().get(0).getIdentificador());
+            UserDao.setVinculoDefault(getApplicationContext(), user.getVinculos().get(0));
         } else if (user.getVinculos().size()>1) {
             intent = new Intent(getApplicationContext(), SetupMainVincloActivity.class);
         } else {

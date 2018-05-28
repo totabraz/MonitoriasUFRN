@@ -7,6 +7,7 @@ import java.util.HashMap;
 import io.paperdb.Paper;
 import totabraz.com.monitoriasufrn.domain.Subject;
 import totabraz.com.monitoriasufrn.domain.User;
+import totabraz.com.monitoriasufrn.domain.Vinculo;
 
 public abstract class UserDao {
 
@@ -25,12 +26,12 @@ public abstract class UserDao {
     }
 
 
-    public static void setVinculoDefault(Context context, String vinculo) {
+    public static void setVinculoDefault(Context context, Vinculo vinculo) {
         Paper.init(context);
         Paper.book().write(USER_VINCULO_ROOT, vinculo);
     }
 
-    public static String getVinculoDefault(Context context) {
+    public static Vinculo getVinculoDefault(Context context) {
         Paper.init(context);
         return Paper.book().read(USER_VINCULO_ROOT);
     }

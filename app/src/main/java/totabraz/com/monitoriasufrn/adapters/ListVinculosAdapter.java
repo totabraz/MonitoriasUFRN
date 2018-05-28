@@ -37,14 +37,14 @@ public class ListVinculosAdapter extends RecyclerView.Adapter<ListVinculosAdapte
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
-        Vinculo vinculo = vinculos.get(position);
-        final String vinculoIndentificador = vinculo.getIdentificador();
-        holder.tvTitlte.setText(vinculoIndentificador );
+        final Vinculo vinculo = vinculos.get(position);
+
+        holder.tvTitlte.setText(vinculo.getIdentificador());
 
         holder.tvTitlte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserDao.setVinculoDefault(activity, vinculoIndentificador );
+                UserDao.setVinculoDefault(activity, vinculo );
                 activity.startActivity(new Intent(activity.getApplicationContext(), MainActivity.class));
                 activity.finish();
             }

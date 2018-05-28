@@ -17,7 +17,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
 import totabraz.com.monitoriasufrn.R;
-import totabraz.com.monitoriasufrn.fragments.AddMonitorFragment;
+import totabraz.com.monitoriasufrn.fragments.monitors.ListMonitorsFragment;
 import totabraz.com.monitoriasufrn.fragments.observations.AddObservationFragment;
 import totabraz.com.monitoriasufrn.fragments.subject.ListSubjectsFragment;
 
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity
         } else  if (id == R.id.nav_favourites) {
 
         } else  if (id == R.id.nav_my_monitors) {
-            fragment = AddMonitorFragment.newInstance();
+            fragment = ListMonitorsFragment.newInstance();
         } else  if (id == R.id.nav_my_subjects) {
             fragment = ListSubjectsFragment.newInstance();
         } else  if (id == R.id.nav_my_observations) {

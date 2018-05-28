@@ -27,8 +27,10 @@ import totabraz.com.monitoriasufrn.activities.MainActivity;
 import totabraz.com.monitoriasufrn.dao.UserDao;
 import totabraz.com.monitoriasufrn.domain.Subject;
 import totabraz.com.monitoriasufrn.domain.User;
+import totabraz.com.monitoriasufrn.domain.Vinculo;
 import totabraz.com.monitoriasufrn.services.SubjectService;
 import totabraz.com.monitoriasufrn.services.TurmaService;
+import totabraz.com.monitoriasufrn.utils.FirebaseUtils;
 import totabraz.com.monitoriasufrn.utils.SysUtils;
 
 
@@ -116,9 +118,9 @@ public class ListSubjectsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 String component = tiCodedigoComponente.getText().toString();
-                String mainVinculo = UserDao.getVinculoDefault(getActivity().getApplicationContext());
+                Vinculo mainVinculo = UserDao.getVinculoDefault(getActivity().getApplicationContext());
                 if (component.length()<3) {
-                    TurmaService turmaService = new TurmaService(getActivity(), mainVinculo ,component);
+                    TurmaService turmaService = new TurmaService(getActivity(), mainVinculo.getIdentificador() ,component);
                     Subject subject =  turmaService.getTurma();
                     Toast.makeText(getActivity().getApplicationContext(), subject.getNomeComponente(),Toast.LENGTH_SHORT).show();
                 }
@@ -131,7 +133,7 @@ public class ListSubjectsFragment extends Fragment {
      * Firebase methods
      */
     private void getComponents() {
-        myDatabase = FirebaseDatabase.getInstance().getReference().child(SysUtils.CHILD_SUBJECTS);
+        myDatabase = FirebaseDatabase.getInstance().getReference().child(FirebaseUtils.CHILD_SUBJECTS);
         myDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
