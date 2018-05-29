@@ -1,5 +1,9 @@
 package totabraz.com.monitoriasufrn.utils;
 
+import android.content.Context;
+
+import totabraz.com.monitoriasufrn.dao.UserDao;
+
 public abstract class FirebaseUtils {
     /**
      *  Firebase constants
@@ -20,9 +24,6 @@ public abstract class FirebaseUtils {
     public static final String CHILD_SUBJECTS = PUBLIC_ROOT + "/subjects/";
     public static final String CHILD_USERS = PRIVATE_ROOT + "/users/";
 
-    public static String getChildProfSubjects(String fbUserID){
-        return PRIVATE_ROOT +"/users/professors/" + fbUserID + "/subjects/";
-    }
 
     public static String getMonitors(String siape){
         return PRIVATE_ROOT +"/users/professors/" + siape + "/monitors/";
@@ -33,5 +34,12 @@ public abstract class FirebaseUtils {
     }
 
 
+    public static String getChildProfSubjects(String fbUserID){
+        return PRIVATE_ROOT +"/users/professors/" + fbUserID + "/subjects/";
+    }
+
+    public static String getChildProfMonitors(Context context, String matricula){
+        return PRIVATE_ROOT +"/users/professors/" + UserDao.getVinculoDefault(context).getIdentificador() + "/monitors/" + matricula;
+    }
 
 }

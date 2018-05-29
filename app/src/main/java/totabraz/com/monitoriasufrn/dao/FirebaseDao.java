@@ -17,6 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import totabraz.com.monitoriasufrn.activities.MainActivity;
 import totabraz.com.monitoriasufrn.domain.User;
+import totabraz.com.monitoriasufrn.utils.FirebaseUtils;
 import totabraz.com.monitoriasufrn.utils.SysUtils;
 
 /**
@@ -28,7 +29,6 @@ public class FirebaseDao {
     private Activity activity;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
-
 
     public FirebaseDao(Activity activity) {
         this.activity = activity;
@@ -77,11 +77,9 @@ public class FirebaseDao {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
                             addUser(user);
-
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-
                         }
                     }
 
@@ -90,7 +88,7 @@ public class FirebaseDao {
 
     private void addUser(User user) {
         // mDatabase.child(SysUtils.FB_PRIVATE).child(SysUtils.FB_USERS).child(SysUtils.fixeCpf(user.getCpfCnpj())).setValue(user);
-        mDatabase.child(SysUtils.CHILD_USERS).child(SysUtils.fixeCpf(user.getCpfCnpj())).setValue(user);
+        mDatabase.child(FirebaseUtils.CHILD_USERS).child(SysUtils.fixeCpf(user.getCpfCnpj())).setValue(user);
         UserDao.setLocalUser(activity, user);
         Intent intent = new Intent(this.activity, MainActivity.class);
         activity.startActivity(intent);
@@ -120,7 +118,7 @@ public class FirebaseDao {
 
             }
         };
-        mDatabase.child(SysUtils.CHILD_USERS).child(user.getCpfCnpj()).addValueEventListener(userListener);
+        mDatabase.child(FirebaseUtils.CHILD_USERS).child(user.getCpfCnpj()).addValueEventListener(userListener);
     }
 
     /**
@@ -160,13 +158,11 @@ public class FirebaseDao {
 //                }
 //                SysUtils.setLocalUser(activity, dataSnapshot.getValue(Usuario.class));
 //            }
-//
 //            @Override
 //            public void onCancelled(DatabaseError databaseError) {
 //                // Getting Post failed, log a message
 //                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
 //            }
-//
 //            @Override
 //            protected void finalize() throws Throwable {
 //                super.finalize();
@@ -181,9 +177,7 @@ public class FirebaseDao {
 //    public List<Teacher> getMyTeachersRated(ArrayList<String> siapes){
 //        for (String siape : siapes){
 //            mDatabase.child(SysUtils.FB_TEACHERS_DIR).child(siape).child()
-//
 //        }
-//
 //    }
 
 
@@ -198,10 +192,8 @@ public class FirebaseDao {
 //            public void onDataChange(DataSnapshot dataSnapshot) {
 //                teacher[0] = dataSnapshot.getValue(Teacher.class);
 //            }
-//
 //            @Override
 //            public void onCancelled(DatabaseError databaseError) {
-//
 //            }
 //        };
 //        mDatabase.child(SysUtils.FB_TEACHERS_DIR).child(siape).child(userCpf).addValueEventListener(getTeacher);

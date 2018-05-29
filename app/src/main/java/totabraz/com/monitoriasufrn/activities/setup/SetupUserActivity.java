@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import totabraz.com.monitoriasufrn.R;
-import totabraz.com.monitoriasufrn.services.UserService;
+import totabraz.com.monitoriasufrn.services.UserLoginService;
 
 public class SetupUserActivity extends AppCompatActivity {
 
@@ -15,7 +15,7 @@ public class SetupUserActivity extends AppCompatActivity {
         /**
          * User Service
          */
-        UserService userService = new UserService(this);
-        userService.getUser();
+        UserLoginService userLoginService = new UserLoginService(this);
+        userLoginService.getUser();
     }
 }

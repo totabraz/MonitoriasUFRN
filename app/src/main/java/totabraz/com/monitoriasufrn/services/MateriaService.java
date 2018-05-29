@@ -25,14 +25,14 @@ import totabraz.com.monitoriasufrn.domain.Subject;
 import totabraz.com.monitoriasufrn.utils.ApiUtils;
 import totabraz.com.monitoriasufrn.utils.SysUtils;
 
-public class SubjectService {
+public class MateriaService {
 
     private ObjectMapper objectMapper;
     private Activity activity;
     private ArrayList<Subject> subjects;
     private String idvinculo;
 
-    public SubjectService(Activity activity, String idvinculo, ArrayList<Subject> subjects) {
+    public MateriaService(Activity activity, String idvinculo, ArrayList<Subject> subjects) {
         this.activity = activity;
         this.idvinculo = idvinculo;
         this.subjects = subjects;

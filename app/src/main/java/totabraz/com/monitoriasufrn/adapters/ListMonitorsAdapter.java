@@ -16,11 +16,11 @@ import totabraz.com.monitoriasufrn.domain.Monitor;
 
 public class ListMonitorsAdapter extends RecyclerView.Adapter<ListMonitorsAdapter.Holder> {
     private ArrayList<Monitor> monitors;
-    private Context context;
+    private Context mContext;
 
     public ListMonitorsAdapter(Context context, ArrayList<Monitor> monitors) {
         this.monitors = monitors;
-        this.context = context;
+        this.mContext = context;
     }
 
     @NonNull

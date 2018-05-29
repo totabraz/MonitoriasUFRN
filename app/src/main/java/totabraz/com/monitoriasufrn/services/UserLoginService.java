@@ -2,6 +2,7 @@ package totabraz.com.monitoriasufrn.services;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.ProgressBar;
@@ -21,7 +22,9 @@ import java.io.IOException;
 import java.util.List;
 
 import totabraz.com.monitoriasufrn.R;
-
+import totabraz.com.monitoriasufrn.activities.error.ErrorMsgActivity;
+import totabraz.com.monitoriasufrn.activities.setup.SetupFirebaseActivity;
+import totabraz.com.monitoriasufrn.dao.UserDao;
 import totabraz.com.monitoriasufrn.domain.User;
 import totabraz.com.monitoriasufrn.domain.Vinculo;
 import totabraz.com.monitoriasufrn.utils.ApiUtils;
@@ -31,13 +34,12 @@ import totabraz.com.monitoriasufrn.utils.SysUtils;
  * Created by totabraz on 26/02/18.
  */
 
-public class UserService {
+public class UserLoginService {
     private ObjectMapper objectMapper;
     private Activity activity;
     private User user;
-    private String cpf;
 
-    public UserService(Activity activity) {
+    public UserLoginService(Activity activity) {
         this.activity = activity;
         this.user = null;
 
@@ -45,12 +47,6 @@ public class UserService {
 
     public User getUser() {
         new GetUser().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-        return user;
-    }
-
-    public User getUserByCPF(String cpf) {
-        this.cpf = cpf;
-        new GetUserByCPF().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
         return user;
     }
 
@@ -73,30 +69,13 @@ public class UserService {
         return null;
     }
 
-    private User getUserCPF() {
-        String url = ApiUtils.CONSULTA_USER + ApiUtils.QUERY_AND_CPF + this.cpf;
-        RestTemplate restTemplate = new RestTemplate();
-        HttpHeaders headers = SysUtils.getHeaders(activity.getApplicationContext());
-        HttpEntity<String> entity = new HttpEntity<String>(headers);
-        ResponseEntity responseEntity = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
-        Log.d("HTTP STATUS : ", "" + responseEntity.getStatusCode().value());
-        if (responseEntity.getStatusCode().value() == HttpStatus.OK.value()) {
-            Log.d("HTTP BODY: ", "" + responseEntity.getBody().toString());
-            JavaType javaType = getObjectMapperInstance().getTypeFactory().constructType(User.class);
-            try {
-                return getObjectMapperInstance().readValue(responseEntity.getBody().toString(), javaType);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return null;
-    }
-
     private List<Vinculo> getVinculoInfo(User user) {
         String url = ApiUtils.CONSULTA_VINCULOS +"&id-usuario=" + user.getIdUsuario();
         RestTemplate restTemplate = new RestTemplate();
+
         HttpHeaders headers = SysUtils.getHeaders(activity.getApplicationContext());
         HttpEntity<String> entity = new HttpEntity<String>(headers);
+
         ResponseEntity responseEntity = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
         if (responseEntity.getStatusCode().value() == HttpStatus.OK.value()) {
             JavaType javaType = getObjectMapperInstance().getTypeFactory().constructCollectionType(List.class, Vinculo.class);
@@ -123,14 +102,16 @@ public class UserService {
      */
 
     private class GetUser extends AsyncTask<String, User, User> {
+        private ProgressBar mProgressBar;
         private ProgressDialog dialog;
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            dialog = new ProgressDialog(activity);
-            dialog.setMessage("Processando...");
-            dialog.show();
+            mProgressBar = activity.findViewById(R.id.progress);
+//            dialog = new ProgressDialog(activity);
+//            dialog.setMessage("Processing...");
+//            dialog.show();
 //            mProgressBar = (ProgressBar) activity.findViewById(R.id.progressBar);
 //            mProgressBar.setVisibility(android.view.View.VISIBLE);
         }
@@ -147,38 +128,12 @@ public class UserService {
 
         @Override
         protected void onPostExecute(User result) {
-            dialog.dismiss();
-        }
-    }
-
-
-    /**
-     * ::: Task GetUserByCPF :::
-     * Get infos from user from refreshToken
-     */
-
-    private class GetUserByCPF extends AsyncTask<String, User, User> {
-        private ProgressBar mProgressBar;
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            mProgressBar = activity.findViewById(R.id.progress);
-        }
-
-        @Override
-        protected User doInBackground(String... parameters) {
-            user = getUserCPF();
-            if (user != null) {
-                user.setCpfCnpj(SysUtils.fixeCpf(user.getCpfCnpj()));
-                user.setVinculos(getVinculoInfo(user));
-            }
-            return user;
-        }
-
-        @Override
-        protected void onPostExecute(User result) {
             mProgressBar.setVisibility(android.view.View.GONE);
+            if (result != null) {
+                UserDao.setLocalUser(activity.getApplicationContext(), result);
+                activity.startActivity(new Intent(activity.getApplicationContext(), SetupFirebaseActivity.class));
+                activity.finish();
+            } else  activity.startActivity(new Intent(activity.getApplicationContext(), ErrorMsgActivity.class));
         }
     }
 }

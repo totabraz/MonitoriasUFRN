@@ -28,10 +28,9 @@ import totabraz.com.monitoriasufrn.dao.UserDao;
 import totabraz.com.monitoriasufrn.domain.Subject;
 import totabraz.com.monitoriasufrn.domain.User;
 import totabraz.com.monitoriasufrn.domain.Vinculo;
-import totabraz.com.monitoriasufrn.services.SubjectService;
+import totabraz.com.monitoriasufrn.services.MateriaService;
 import totabraz.com.monitoriasufrn.services.TurmaService;
 import totabraz.com.monitoriasufrn.utils.FirebaseUtils;
-import totabraz.com.monitoriasufrn.utils.SysUtils;
 
 
 public class ListSubjectsFragment extends Fragment {
@@ -80,7 +79,7 @@ public class ListSubjectsFragment extends Fragment {
     private void init() {
         User user = Paper.book().read("user");
         if (user.getVinculos().size()>0){
-            SubjectService subjectService = new SubjectService((MainActivity) getActivity(),user.getVinculos().get(0).getIdVinculo(), subjects);
+            MateriaService materiaService = new MateriaService((MainActivity) getActivity(),user.getVinculos().get(0).getIdVinculo(), subjects);
         } else {
             Toast.makeText((MainActivity) getActivity().getApplicationContext(), "Erro ao carregar vinculos", Toast.LENGTH_SHORT).show();
         }

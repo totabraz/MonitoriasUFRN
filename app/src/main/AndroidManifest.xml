@@ -29,7 +29,6 @@
         <activity android:name=".activities.setup.SetupUserActivity" />
         <activity android:name=".activities.setup.SetupFirebaseActivity" />
         <activity android:name=".activities.error.ErrorMsgActivity" />
-        <activity android:name=".activities.monitors.AddMonitorActivity" />
         <activity android:name=".activities.setup.SetupMainVincloActivity"></activity>
     </application>
 
