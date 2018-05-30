@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.inputmethod.InputMethodManager;
 
 import totabraz.com.monitoriasufrn.R;
 import totabraz.com.monitoriasufrn.fragments.monitors.ListAddMonitorsFragment;
@@ -50,8 +51,13 @@ public class MainActivity extends AppCompatActivity
         this.drawerPreset();
 
         toolbarSearchInput = findViewById(R.id.toolbarSearchInput);
-
+        fragment = ListAddMonitorsFragment.newInstance();
+        ft = getFragmentManager().beginTransaction();
+        ft.replace(R.id.rlFragmentsArea, fragment);
+        ft.addToBackStack(null);
+        ft.commit();
     }
+
 
     @Override
     public void onBackPressed() {

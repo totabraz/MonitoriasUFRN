@@ -4,7 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.setup.SetupMainVincloActivity">
-
+    <ProgressBar
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvMyList"
         android:layout_width="match_parent"

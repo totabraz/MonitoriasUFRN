@@ -46,7 +46,7 @@
             android:id="@+id/rvMyList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone" />
+            android:visibility="visible" />
 
         <ProgressBar
             android:id="@+id/progress"
@@ -98,7 +98,6 @@
                 android:maxLines="1"
                 android:lines="1"
                 android:layout_height="wrap_content"
-                android:text="08484668452"
                 android:hint="Matrícula do monitor" />
         </android.support.design.widget.TextInputLayout>
 

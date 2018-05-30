@@ -14,11 +14,11 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JavaType;
@@ -38,16 +38,13 @@ import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import totabraz.com.monitoriasufrn.R;
 import totabraz.com.monitoriasufrn.adapters.ListMonitorsAdapter;
-import totabraz.com.monitoriasufrn.dao.UserDao;
 import totabraz.com.monitoriasufrn.domain.Monitor;
-import totabraz.com.monitoriasufrn.domain.User;
 import totabraz.com.monitoriasufrn.domain.Vinculo;
-import totabraz.com.monitoriasufrn.services.UserAddMonitorService;
-import totabraz.com.monitoriasufrn.services.UserLoginService;
 import totabraz.com.monitoriasufrn.utils.ApiUtils;
 import totabraz.com.monitoriasufrn.utils.FirebaseUtils;
 import totabraz.com.monitoriasufrn.utils.SysUtils;
@@ -57,18 +54,19 @@ import totabraz.com.monitoriasufrn.utils.SysUtils;
  */
 public class ListAddMonitorsFragment extends Fragment {
 
-    private ArrayList<Monitor> monitors;
+    private HashMap<String, Monitor> monitors;
+    private String lastCpf;
+    private ObjectMapper objectMapper;
+    private ListMonitorsAdapter mAdapter;
+
+    // Views
     private Button btnAdd;
     private Context mContext;
     private LinearLayout llAreaAdd;
-    private ListMonitorsAdapter mAdapter;
-    private ObjectMapper objectMapper;
     private ProgressBar progress;
     private RecyclerView rvMyList;
-    private String lastCpf;
     private TextInputEditText tiMatricula;
     private TextView tvNothingToShow;
-    private User user;
     private View rootView;
 
     public static ListAddMonitorsFragment newInstance() {
@@ -93,18 +91,13 @@ public class ListAddMonitorsFragment extends Fragment {
     }
 
     private void setupViews() {
-        monitors = new ArrayList<Monitor>();
+        monitors = new HashMap<String, Monitor>();
         llAreaAdd = rootView.findViewById(R.id.llAreaAdd);
         rvMyList = rootView.findViewById(R.id.rvMyList);
         tvNothingToShow = rootView.findViewById(R.id.tvNothingToShow);
         progress = rootView.findViewById(R.id.progress);
         tiMatricula = rootView.findViewById(R.id.tiMatricula);
         btnAdd = rootView.findViewById(R.id.btnAdd);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(mContext);
-        mAdapter = new ListMonitorsAdapter(mContext, monitors);
-        rvMyList.setLayoutManager(mLayoutManager);
-        rvMyList.setItemAnimator(new DefaultItemAnimator());
-        rvMyList.setAdapter(mAdapter);
     }
 
     private void setupOnClicks() {
@@ -116,7 +109,8 @@ public class ListAddMonitorsFragment extends Fragment {
                         case KeyEvent.KEYCODE_ENTER:
                             addMonitor();
                             return true;
-                        default: break;
+                        default:
+                            break;
                     }
                 }
                 return false;
@@ -139,16 +133,22 @@ public class ListAddMonitorsFragment extends Fragment {
     }
 
     private void getMonitoresUser() {
-        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(FirebaseUtils.getMonitors(UserDao.getVinculoDefault(mContext).getIdentificador()));
-        ValueEventListener userListener = new ValueEventListener() {
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(FirebaseUtils.getChildProfMonitors(mContext));
+        ValueEventListener monitorListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot subdataSnapshot : dataSnapshot.getChildren()) {
-                    Monitor monitor = new Monitor();
-                    monitor.setupUser(subdataSnapshot.getValue(User.class));
-                    monitors.add(monitor);
+                    monitors.put(subdataSnapshot.getKey(), subdataSnapshot.getValue(Monitor.class));
                 }
-                doneToGetMonitors();
+                if (monitors.size() > 0) {
+                    RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(mContext);
+                    mAdapter = new ListMonitorsAdapter(mContext, SysUtils.getGetArrayMonitors(monitors));
+                    rvMyList.setLayoutManager(mLayoutManager);
+                    rvMyList.setItemAnimator(new DefaultItemAnimator());
+                    rvMyList.setAdapter(mAdapter);
+                }
+
+                updateListMonitors();
             }
 
             @Override
@@ -159,55 +159,46 @@ public class ListAddMonitorsFragment extends Fragment {
             @Override
             protected void finalize() throws Throwable {
                 super.finalize();
-                showContent();
+                updateListMonitors();
             }
         };
-        mDatabase.addValueEventListener(userListener);
+        mDatabase.addValueEventListener(monitorListener);
     }
 
     /**
      * First steps after to get Firebase Users.
      */
-    private void doneToGetMonitors() {
+    private void updateListMonitors() {
         if (monitors.size() > 0) {
             rvMyList.setVisibility(View.VISIBLE);
             tvNothingToShow.setVisibility(View.GONE);
+            if (mAdapter != null) mAdapter.notifyDataSetChanged();
         } else {
             rvMyList.setVisibility(View.GONE);
             tvNothingToShow.setVisibility(View.VISIBLE);
         }
         progress.setVisibility(View.GONE);
         llAreaAdd.setVisibility(View.VISIBLE);
-
-        // TODO: METHODO TO SHOW RECYCLE VIEW WITH ADAPTERS
-    }
-
-    private void showContent() {
-        if (monitors.size() < 1) {
-            tvNothingToShow.setVisibility(View.VISIBLE);
-            rvMyList.setVisibility(View.GONE);
-        } else {
-            tvNothingToShow.setVisibility(View.GONE);
-            rvMyList.setVisibility(View.VISIBLE);
-            progress.setVisibility(View.GONE);
-        }
-        llAreaAdd.setVisibility(View.VISIBLE);
-
     }
 
     private void addMonitor() {
         lastCpf = tiMatricula.getText().toString();
-//        UserAddMonitorService userLoginService = new UserAddMonitorService(getActivity(), UserDao.getVinculoDefault(mContext).getIdentificador());
-//        userLoginService.getUser();
-      new GetUserByCPF().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        if (lastCpf.length() > 0) new GetUserByCPF().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        hideKeyboard();
     }
+
+    private void hideKeyboard() {
+        InputMethodManager imm = (InputMethodManager) mContext.getSystemService(mContext.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(tiMatricula.getWindowToken(), 0);
+    }
+
 
     /**
      * ::: Task GetUser :::
-     * Get infos from user from refreshToken
+     * Get infos from monitor from refreshToken
      */
 
-    private User getUserCPF() {
+    private Monitor getMonitorCPF() {
         String url = ApiUtils.CONSULTA_USER + ApiUtils.QUERY_AND_CPF + lastCpf;
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = SysUtils.getHeaders(mContext);
@@ -216,9 +207,10 @@ public class ListAddMonitorsFragment extends Fragment {
         Log.d("HTTP STATUS : ", "" + responseEntity.getStatusCode().value());
         if (responseEntity.getStatusCode().value() == HttpStatus.OK.value()) {
             Log.d("HTTP BODY: ", "" + responseEntity.getBody().toString());
-            JavaType javaType = getObjectMapperInstance().constructType(User.class);
+            JavaType javaType = getObjectMapperInstance().getTypeFactory().constructCollectionType(List.class, Monitor.class);
             try {
-                return getObjectMapperInstance().readValue(responseEntity.getBody().toString(), javaType);
+                ArrayList<Monitor> monitors = getObjectMapperInstance().readValue(responseEntity.getBody().toString(), javaType);
+                if (monitors.size()>0) return monitors.get(0);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -226,8 +218,8 @@ public class ListAddMonitorsFragment extends Fragment {
         return null;
     }
 
-    private List<Vinculo> getVinculoInfo(User user) {
-        String url = ApiUtils.CONSULTA_VINCULOS + "&id-usuario=" + user.getIdUsuario();
+    private List<Vinculo> getVinculoInfo(Monitor monitor) {
+        String url = ApiUtils.CONSULTA_VINCULOS + "&id-usuario=" + monitor.getIdUsuario();
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = SysUtils.getHeaders(mContext);
         HttpEntity<String> entity = new HttpEntity<String>(headers);
@@ -253,10 +245,11 @@ public class ListAddMonitorsFragment extends Fragment {
 
     /**
      * ::: Task GetUserByCPF :::
-     * Get infos from user from refreshToken
+     * Get infos from monitor from refreshToken
      */
 
-    private class GetUserByCPF extends AsyncTask<String, User, User> {
+
+    private class GetUserByCPF extends AsyncTask<String, Monitor, Monitor> {
         private ProgressBar mProgressBar;
 
         @Override
@@ -266,24 +259,28 @@ public class ListAddMonitorsFragment extends Fragment {
         }
 
         @Override
-        protected User doInBackground(String... parameters) {
-            user = getUserCPF();
-            if (user != null) {
-                user.setCpfCnpj(SysUtils.fixeCpf(user.getCpfCnpj()));
-                user.setVinculos(getVinculoInfo(user));
+        protected Monitor doInBackground(String... parameters) {
+            Monitor monitor = getMonitorCPF();
+            if (monitor != null) {
+                monitor.setCpfCnpj(SysUtils.fixeCpf(monitor.getCpfCnpj()));
+                monitor.setVinculos(getVinculoInfo(monitor));
             }
-            return user;
+            return monitor;
         }
 
         @Override
-        protected void onPostExecute(User result) {
+        protected void onPostExecute(Monitor result) {
             if (result != null) {
-                Monitor monitor = new Monitor();
-                monitor.setupUser(result);
-                DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(FirebaseUtils.getChildProfMonitors(mContext, lastCpf));
-                mDatabase.setValue(monitor);
+                monitors.put(result.getCpfCnpj(), result);
+                DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(FirebaseUtils.getChildProfMonitors(mContext));
+                mDatabase.setValue(monitors);
+                updateListMonitors();
+                tiMatricula.setText("");
                 mProgressBar.setVisibility(android.view.View.GONE);
+            } else {
+                SysUtils.longToast(mContext, "Ops! Algo de errado não está certo!");
             }
         }
     }
+
 }

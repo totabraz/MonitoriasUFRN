@@ -131,9 +131,8 @@ public class UserAddMonitorService {
         protected void onPostExecute(User result) {
             mProgressBar.setVisibility(android.view.View.GONE);
             if (result != null) {
-                Monitor monitor = new Monitor();
-                monitor.setupUser(result);
-                DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(FirebaseUtils.getChildProfMonitors(activity.getApplicationContext(), lastCpf));
+                Monitor monitor = (Monitor) result;
+                DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(FirebaseUtils.getChildProfMonitors(activity.getApplicationContext()));
                 mDatabase.setValue(monitor);
             }
         }

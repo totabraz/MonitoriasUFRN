@@ -11,6 +11,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -18,6 +20,7 @@ import java.util.Map;
 import io.paperdb.Paper;
 import totabraz.com.monitoriasufrn.activities.setup.LoginActivity;
 import totabraz.com.monitoriasufrn.apisinfo.JApi;
+import totabraz.com.monitoriasufrn.domain.Monitor;
 import totabraz.com.monitoriasufrn.domain.User;
 
 public abstract class SysUtils {
@@ -65,6 +68,14 @@ public abstract class SysUtils {
         int size = 11 - cpf.length();
         while (size-- > 0) cpf = "0" + cpf;
         return cpf;
+    }
+
+    /**
+     * HashMap to ArrayList
+     */
+    public static ArrayList<Monitor> getGetArrayMonitors(HashMap<String, Monitor> monitors) {
+        Collection<Monitor> values = monitors.values();
+        return  new ArrayList<Monitor>(values);
     }
 
     /**

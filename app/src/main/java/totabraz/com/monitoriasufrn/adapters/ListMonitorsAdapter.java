@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -31,13 +32,13 @@ public class ListMonitorsAdapter extends RecyclerView.Adapter<ListMonitorsAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Holder holder, int position) {
-        Monitor monitor = monitors.get(position);
-        holder.tvTitlte.setText(monitor.getNomePessoa());
-        holder.tvTitlte.setOnClickListener(new View.OnClickListener() {
+    public void onBindViewHolder(@NonNull Holder holder, final int position) {
+        final Monitor monitor = monitors.get(position);
+        holder.tvTitle.setText(monitor.getNomePessoa());
+        holder.ivBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //REMOVE
+                monitors.remove(position);
             }
         });
     }
@@ -48,12 +49,12 @@ public class ListMonitorsAdapter extends RecyclerView.Adapter<ListMonitorsAdapte
     }
 
     class Holder extends RecyclerView.ViewHolder {
-        private TextView tvTitlte;
-        private Button ivBtn;
+        private TextView tvTitle;
+        private ImageView ivBtn;
 
         public Holder(View itemView) {
             super(itemView);
-            tvTitlte = itemView.findViewById(R.id.tvTitle);
+            tvTitle = itemView.findViewById(R.id.tvTitle);
             ivBtn = itemView.findViewById(R.id.ivBtn);
         }
     }
