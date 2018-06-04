@@ -1,9 +1,9 @@
 package totabraz.com.monitoriasufrn.activities.setup;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.widget.ProgressBar;
 
@@ -23,7 +23,6 @@ import totabraz.com.monitoriasufrn.activities.MainActivity;
 import totabraz.com.monitoriasufrn.activities.error.ErrorMsgActivity;
 import totabraz.com.monitoriasufrn.dao.UserDao;
 import totabraz.com.monitoriasufrn.domain.User;
-import totabraz.com.monitoriasufrn.utils.FirebaseUtils;
 import totabraz.com.monitoriasufrn.utils.FirebaseUtils;
 
 public class SetupFirebaseActivity extends AppCompatActivity {
@@ -52,7 +51,8 @@ public class SetupFirebaseActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             userNotExist[0] = false;
                             getFirebaseUser(user);
-                        } else Log.w(FirebaseUtils.TAG_Firebase, "signInWithEmail:failure", task.getException());
+                        } else
+                            Log.w(FirebaseUtils.TAG_Firebase, "signInWithEmail:failure", task.getException());
                     }
                 });
         if (userNotExist[0]) {
@@ -66,13 +66,14 @@ public class SetupFirebaseActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) addUser(user);
-                        else  Log.w(FirebaseUtils.TAG_Firebase, "createUserWithEmail:failure", task.getException());
+                        else
+                            Log.w(FirebaseUtils.TAG_Firebase, "createUserWithEmail:failure", task.getException());
                     }
                 });
     }
 
     private void addUser(User user) {
-        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(FirebaseUtils.CHILD_USERS).child(user.getCpfCnpj());
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(FirebaseUtils.USERS).child(user.getCpfCnpj());
         mDatabase.setValue(user);
         UserDao.setLocalUser(getApplicationContext(), user);
         goToNextActivity();
@@ -80,17 +81,19 @@ public class SetupFirebaseActivity extends AppCompatActivity {
     }
 
     private void getFirebaseUser(User user) {
-        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(FirebaseUtils.CHILD_USERS).child(user.getCpfCnpj());
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(FirebaseUtils.USERS).child(user.getCpfCnpj());
         ValueEventListener userListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 UserDao.setLocalUser(getApplicationContext(), dataSnapshot.getValue(User.class));
-               goToNextActivity();
+                goToNextActivity();
             }
+
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 Log.w(FirebaseUtils.TAG_Firebase, "loadPost:onCancelled", databaseError.toException());
             }
+
             @Override
             protected void finalize() throws Throwable {
                 super.finalize();
@@ -103,10 +106,10 @@ public class SetupFirebaseActivity extends AppCompatActivity {
 
     private void goToNextActivity() {
         Intent intent;
-        if (user.getVinculos().size()==1) {
+        if (user.getVinculos().size() == 1) {
             intent = new Intent(getApplicationContext(), MainActivity.class);
             UserDao.setVinculoDefault(getApplicationContext(), user.getVinculos().get(0));
-        } else if (user.getVinculos().size()>1) {
+        } else if (user.getVinculos().size() > 1) {
             intent = new Intent(getApplicationContext(), SetupMainVincloActivity.class);
         } else {
             intent = new Intent(getApplicationContext(), ErrorMsgActivity.class);

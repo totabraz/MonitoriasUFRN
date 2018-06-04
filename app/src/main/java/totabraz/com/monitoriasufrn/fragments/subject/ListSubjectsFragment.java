@@ -132,7 +132,7 @@ public class ListSubjectsFragment extends Fragment {
      * Firebase methods
      */
     private void getComponents() {
-        myDatabase = FirebaseDatabase.getInstance().getReference().child(FirebaseUtils.CHILD_SUBJECTS);
+        myDatabase = FirebaseDatabase.getInstance().getReference().child(FirebaseUtils.SUBJECTS);
         myDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

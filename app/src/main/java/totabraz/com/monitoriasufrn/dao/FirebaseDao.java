@@ -88,7 +88,7 @@ public class FirebaseDao {
 
     private void addUser(User user) {
         // mDatabase.child(SysUtils.FB_PRIVATE).child(SysUtils.FB_USERS).child(SysUtils.fixeCpf(user.getCpfCnpj())).setValue(user);
-        mDatabase.child(FirebaseUtils.CHILD_USERS).child(SysUtils.fixeCpf(user.getCpfCnpj())).setValue(user);
+        mDatabase.child(FirebaseUtils.USERS).child(SysUtils.fixeCpf(user.getCpfCnpj())).setValue(user);
         UserDao.setLocalUser(activity, user);
         Intent intent = new Intent(this.activity, MainActivity.class);
         activity.startActivity(intent);
@@ -118,7 +118,7 @@ public class FirebaseDao {
 
             }
         };
-        mDatabase.child(FirebaseUtils.CHILD_USERS).child(user.getCpfCnpj()).addValueEventListener(userListener);
+        mDatabase.child(FirebaseUtils.USERS).child(user.getCpfCnpj()).addValueEventListener(userListener);
     }
 
     /**

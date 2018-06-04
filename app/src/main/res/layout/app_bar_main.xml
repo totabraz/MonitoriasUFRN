@@ -16,20 +16,22 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/nav_header_padding_toolbar"
             android:background="@drawable/bg_header"
+            android:paddingBottom="@dimen/nav_header_padding_toolbar"
             app:popupTheme="@style/AppTheme.PopupOverlay">
+
             <!--<TextView-->
-                <!--android:id="@+id/toolbarTitle"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="Title"/>-->
+            <!--android:id="@+id/toolbarTitle"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Title"/>-->
+
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/toolbarSearchInput"
-                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Buscar Matéria"/>
+                android:hint="Buscar Matéria"
+                android:visibility="gone" />
 
         </android.support.v7.widget.Toolbar>
 
@@ -37,9 +39,9 @@
 
     <include
         layout="@layout/content_main"
-        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_width="match_parent"/>
+        android:layout_marginTop="40dp" />
 
 
 </RelativeLayout>

@@ -14,7 +14,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         JApi.deslogar(getApplicationContext());
         JApiWebView japiWebView = findViewById(R.id.japiwebview);
         japiWebView.loadJapiWebView(ApiUtils.URLBASE_AUTH_TEST, ApiUtils.ID, ApiUtils.SECRET, this, SetupUserActivity.class);

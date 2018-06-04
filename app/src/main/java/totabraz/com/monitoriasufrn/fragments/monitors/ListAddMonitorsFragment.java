@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JavaType;
@@ -43,6 +44,7 @@ import java.util.List;
 
 import totabraz.com.monitoriasufrn.R;
 import totabraz.com.monitoriasufrn.adapters.ListMonitorsAdapter;
+import totabraz.com.monitoriasufrn.dao.UserDao;
 import totabraz.com.monitoriasufrn.domain.Monitor;
 import totabraz.com.monitoriasufrn.domain.Vinculo;
 import totabraz.com.monitoriasufrn.utils.ApiUtils;
@@ -58,6 +60,7 @@ public class ListAddMonitorsFragment extends Fragment {
     private String lastCpf;
     private ObjectMapper objectMapper;
     private ListMonitorsAdapter mAdapter;
+    private String siape;
 
     // Views
     private Button btnAdd;
@@ -84,6 +87,7 @@ public class ListAddMonitorsFragment extends Fragment {
         rootView = inflater.inflate(R.layout.fragment_list_add_monitors, container, false);
         monitors = null;
         mContext = getActivity().getApplicationContext();
+        siape = UserDao.getVinculoDefault(mContext).getIdentificador();
         setupViews();
         setupOnClicks();
         init();
@@ -133,7 +137,9 @@ public class ListAddMonitorsFragment extends Fragment {
     }
 
     private void getMonitoresUser() {
-        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(FirebaseUtils.getChildProfMonitors(mContext));
+
+        String siape = UserDao.getVinculoDefault(mContext).getIdentificador();
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(FirebaseUtils.getChildProfMonitors(mContext, siape));
         ValueEventListener monitorListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -183,8 +189,12 @@ public class ListAddMonitorsFragment extends Fragment {
 
     private void addMonitor() {
         lastCpf = tiMatricula.getText().toString();
-        if (lastCpf.length() > 0) new GetUserByCPF().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-        hideKeyboard();
+        if (!monitors.containsKey(lastCpf)){
+            if (lastCpf.length() > 0) new GetUserByCPF().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+            hideKeyboard();
+        } else {
+            Toast.makeText(mContext, "Usuário já cadastrado", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void hideKeyboard() {
@@ -264,6 +274,7 @@ public class ListAddMonitorsFragment extends Fragment {
             if (monitor != null) {
                 monitor.setCpfCnpj(SysUtils.fixeCpf(monitor.getCpfCnpj()));
                 monitor.setVinculos(getVinculoInfo(monitor));
+                monitor.setSiapeProfessor(siape);
             }
             return monitor;
         }
@@ -272,8 +283,15 @@ public class ListAddMonitorsFragment extends Fragment {
         protected void onPostExecute(Monitor result) {
             if (result != null) {
                 monitors.put(result.getCpfCnpj(), result);
-                DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(FirebaseUtils.getChildProfMonitors(mContext));
-                mDatabase.setValue(monitors);
+//                DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(FirebaseUtils.getChildProfMonitors(mContext));
+//                mDatabase.setValue(monitors);
+                /**
+                 * TESTARRRRRRRRRRRRR
+                 * TESTARRRRRRRRRRRRR
+                 * TESTARRRRRRRRRRRRR
+                 * TESTARRRRRRRRRRRRR
+                 */
+                FirebaseUtils.addMonitor(mContext, siape, lastCpf, monitors);
                 updateListMonitors();
                 tiMatricula.setText("");
                 mProgressBar.setVisibility(android.view.View.GONE);

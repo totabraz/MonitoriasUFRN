@@ -18,6 +18,7 @@ import totabraz.com.monitoriasufrn.activities.MainActivity;
 import totabraz.com.monitoriasufrn.activities.setup.SetupMainVincloActivity;
 import totabraz.com.monitoriasufrn.dao.UserDao;
 import totabraz.com.monitoriasufrn.domain.Vinculo;
+import totabraz.com.monitoriasufrn.enun.TipoVinculoEnum;
 
 public class ListVinculosAdapter extends RecyclerView.Adapter<ListVinculosAdapter.Holder> {
     private ArrayList<Vinculo> vinculos;
