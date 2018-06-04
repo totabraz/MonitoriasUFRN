@@ -18,6 +18,7 @@ import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 
 import totabraz.com.monitoriasufrn.R;
+import totabraz.com.monitoriasufrn.fragments.monitoring.ListMonitoringFragment;
 import totabraz.com.monitoriasufrn.fragments.monitors.ListAddMonitorsFragment;
 import totabraz.com.monitoriasufrn.fragments.observations.AddObservationFragment;
 import totabraz.com.monitoriasufrn.fragments.subject.ListSubjectsFragment;
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity
         this.drawerPreset();
 
         toolbarSearchInput = findViewById(R.id.toolbarSearchInput);
-        fragment = ListAddMonitorsFragment.newInstance();
+        fragment = ListMonitoringFragment.newInstance();
         ft = getFragmentManager().beginTransaction();
         ft.replace(R.id.rlFragmentsArea, fragment);
         ft.addToBackStack(null);
@@ -109,7 +110,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_monitorias) {
-
+            fragment = ListMonitoringFragment.newInstance();
         } else  if (id == R.id.nav_favourites) {
 
         } else  if (id == R.id.nav_my_monitors) {

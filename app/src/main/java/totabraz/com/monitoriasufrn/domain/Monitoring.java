@@ -1,5 +1,7 @@
 package totabraz.com.monitoriasufrn.domain;
 
+import java.util.ArrayList;
+
 public class Monitoring extends Turma {
     private Monitor monitor;
     private String horarioM;
@@ -7,6 +9,7 @@ public class Monitoring extends Turma {
     private String horarioN;
     private String setor;
     private String sala;
+    private ArrayList<Boolean> dias;
 
 
     public Monitoring() {
@@ -17,11 +20,11 @@ public class Monitoring extends Turma {
         sala = null;
     }
 
-    public String getClassTime(){
+    public String getClassTime() {
         String time = "";
-        if (horarioM.length()>0) time = horarioM + " - ";
-        if (horarioT.length()>0) time = horarioT + " - ";
-        if (horarioN.length()>0) time = horarioN + " - ";
+        if (horarioM.length() > 0) time = horarioM + " - ";
+        if (horarioT.length() > 0) time = horarioT + " - ";
+        if (horarioN.length() > 0) time = horarioN + " - ";
         return time;
     }
 
@@ -72,5 +75,13 @@ public class Monitoring extends Turma {
 
     public void setSala(String sala) {
         this.sala = sala;
+    }
+
+    public ArrayList<Boolean> getDias() {
+        return dias;
+    }
+
+    public void setDias(ArrayList<Boolean> dias) {
+        this.dias = dias;
     }
 }

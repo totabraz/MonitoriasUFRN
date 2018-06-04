@@ -39,7 +39,7 @@ public abstract class SysUtils {
         return mDias;
     }
 
-
+    public static final String KEY_PROFESSOR = "PROFESSOR";
 
     /**
      * Header to use on Async request

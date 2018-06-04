@@ -9,6 +9,7 @@ import java.util.HashMap;
 
 import totabraz.com.monitoriasufrn.dao.UserDao;
 import totabraz.com.monitoriasufrn.domain.Monitor;
+import totabraz.com.monitoriasufrn.domain.Monitoring;
 
 public abstract class FirebaseUtils {
     /**
@@ -23,8 +24,9 @@ public abstract class FirebaseUtils {
     private static final String PRIVATE_ROOT = "private/";
 
     public static final String MONITORING = PUBLIC_ROOT + "monitoring/";
+//    public static final String MONITORING_AT_MONITORS = PRIVATE_ROOT + "monitors/monitoring/";
 
-    public static final String MONITOR_PER_PROFESSOERS = PRIVATE_ROOT + "monitors/professors/";
+    public static final String MONITOR_PER_PROFESSOERS = PRIVATE_ROOT + "monitors/monitoring/";
     public static final String LIST_MONITOR = PRIVATE_ROOT + "monitors/list_monitors/";
 
     public static final String PROFESSOR = PRIVATE_ROOT + "professors/";
@@ -32,6 +34,10 @@ public abstract class FirebaseUtils {
     public static final String USERS = PRIVATE_ROOT + "users/";
 
     public static final String SUBJECTS = PUBLIC_ROOT + "subjects/";
+
+    //------------------------------------------------------------------
+    //------------------------------------------------------------------
+    //------------------------------------------------------------------
 
     public static String getMonitors(String siape) {
         return MONITOR_PER_PROFESSOERS + siape + "/monitors/";
@@ -45,10 +51,6 @@ public abstract class FirebaseUtils {
         return PROFESSOR + fbUserID + "/subjects/";
     }
 
-    public static String getChildProfMonitors(Context context, String siape) {
-        return MONITOR_PER_PROFESSOERS + siape + "/" ;
-    }
-
 
     /*
 
@@ -56,6 +58,7 @@ public abstract class FirebaseUtils {
 
     monitors/professors/siape/cpf/(monitor)
     monitors/list_monitors/cpf/siape/cpf
+    monitors/monitoring/siape/cpf/cod_component/cod_component
 
     professors/turmas/cod_component/(subject)
 
@@ -64,10 +67,24 @@ public abstract class FirebaseUtils {
      */
 
     /**
-     * Add Monitors
+     * ======================================
+     * -------------- MONITORS --------------
+     * ======================================
+     */
+
+    /* get URL Monitors
      * -> addMonitorAtList(...)
      * -> addMonitorAtProfessor(...)
      */
+    public static String getChildProfMonitors(Context context, String siape) {
+        return MONITOR_PER_PROFESSOERS + siape + "/";
+    }
+
+    /* Add Monitors
+     * -> addMonitorAtList(...)
+     * -> addMonitorAtProfessor(...)
+     */
+
     private static void addMonitorAtList(String siape, String cpf) {
         String key = siape + "/" + cpf;
         String rootDir = LIST_MONITOR + "/" + key;
@@ -85,8 +102,43 @@ public abstract class FirebaseUtils {
         UserDao.getLocalUser(mContext);
         addMonitorAtProfessor(siape, cpf, monitors);
         addMonitorAtList(siape, cpf);
-
     }
 
+    /**
+     * ======================================
+     * -------------- MONITORING ------------
+     * ======================================
+     */
+
+    /* get URL MONITORING
+     * -> addMonitorAtList(...)
+     * -> addMonitorAtProfessor(...)
+     */
+
+    public static void addMonitorings(Context context, Monitoring monitoring) {
+        int diaCount = 0;
+        for (Boolean dia : monitoring.getDias()) {
+            diaCount++;
+            if (dia) {
+                String siape = monitoring.getMonitor().getSiapeProfessor();
+                String cpf = monitoring.getMonitor().getCpfCnpj();
+                String rootDir = MONITORING + "/" + dia + "/" + monitoring.getCodigoComponente() + "/" + siape + "_" +  cpf;
+                DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(rootDir);
+                mDatabase.setValue(monitoring);
+            }
+        }
+    }
+    /* Add Monitors
+     * -> addMonitorAtList(...)
+     * -> addMonitorAtProfessor(...)
+     */
+
+
+
+
+    public static String addMonitoringsDIR(Context context, String siape) {
+        return MONITORING;
+
+    }
 
 }

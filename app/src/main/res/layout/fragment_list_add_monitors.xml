@@ -97,7 +97,6 @@
                 android:inputType="numberDecimal"
                 android:maxLines="1"
                 android:lines="1"
-                android:text="08484668452"
                 android:layout_height="wrap_content"
                 android:hint="Matrícula do monitor" />
         </android.support.design.widget.TextInputLayout>

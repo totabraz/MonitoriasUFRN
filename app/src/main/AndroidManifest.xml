@@ -20,16 +20,19 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activities.subjects.SubjectActivity" />
         <activity android:name=".activities.setup.LoginActivity">
+
+        </activity>
+        <activity android:name=".activities.setup.SetupUserActivity" />
+        <activity android:name=".activities.setup.SetupFirebaseActivity" />
+        <activity android:name=".activities.error.ErrorMsgActivity" />
+        <activity android:name=".activities.setup.SetupMainVincloActivity" />
+        <activity android:name=".activities.monitoring.AddMonitoringActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.setup.SetupUserActivity" />
-        <activity android:name=".activities.setup.SetupFirebaseActivity" />
-        <activity android:name=".activities.error.ErrorMsgActivity" />
-        <activity android:name=".activities.setup.SetupMainVincloActivity"></activity>
     </application>
 
 </manifest>

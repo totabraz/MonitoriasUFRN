@@ -43,6 +43,7 @@
         android:layout_centerHorizontal="true"
         android:background="@drawable/button_background"
         android:text="Cadastrar"
+        android:visibility="gone"
         android:textColor="@drawable/button_txt_color" />
 
 
