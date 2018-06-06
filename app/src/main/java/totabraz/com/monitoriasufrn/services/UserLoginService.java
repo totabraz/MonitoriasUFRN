@@ -103,17 +103,11 @@ public class UserLoginService {
 
     private class GetUser extends AsyncTask<String, User, User> {
         private ProgressBar mProgressBar;
-        private ProgressDialog dialog;
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
             mProgressBar = activity.findViewById(R.id.progress);
-//            dialog = new ProgressDialog(activity);
-//            dialog.setMessage("Processing...");
-//            dialog.show();
-//            mProgressBar = (ProgressBar) activity.findViewById(R.id.progressBar);
-//            mProgressBar.setVisibility(android.view.View.VISIBLE);
         }
 
         @Override

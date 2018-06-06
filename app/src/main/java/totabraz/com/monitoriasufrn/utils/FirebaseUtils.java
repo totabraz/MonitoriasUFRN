@@ -22,34 +22,44 @@ public abstract class FirebaseUtils {
     private static final String PUBLIC_ROOT = "public/";
     private static final String SEMI_PUBLIC_ROOT = "semi_public/";
     private static final String PRIVATE_ROOT = "private/";
+    public static final String SPACER_KEY = "___";
+    /**
+     * Monitoria
+     */
+    private static final String MONITORING_ROOT = PUBLIC_ROOT + "monitoring/";
+    private static final String MONITORING =  "monitoring/";
+    /**
+     * Monitores
+     */
+    private static final String MONITORS_MONITORING = PRIVATE_ROOT + "monitors/monitoring/";
+    private static final String MONITORS_LIST = PRIVATE_ROOT + "monitors/list/";
+    private static final String MONITORS = "monitors/";
+    private static final String MONITORS_ROOT = PRIVATE_ROOT + "monitors/";
+    /**
+     * Professor
+     */
+    private static final String PROFESSOR_ROOT = PRIVATE_ROOT + "professors/";
+    private static final String PROFESSOR =  "professors/";
 
-    public static final String MONITORING = PUBLIC_ROOT + "monitoring/";
-//    public static final String MONITORING_AT_MONITORS = PRIVATE_ROOT + "monitors/monitoring/";
-
-    public static final String MONITOR_PER_PROFESSOERS = PRIVATE_ROOT + "monitors/monitoring/";
-    public static final String LIST_MONITOR = PRIVATE_ROOT + "monitors/list_monitors/";
-
-    public static final String PROFESSOR = PRIVATE_ROOT + "professors/";
-    public static final String STUDENTS = PRIVATE_ROOT + "students/";
-    public static final String USERS = PRIVATE_ROOT + "users/";
+    public static final String USERS = PRIVATE_ROOT + "user/";
 
     public static final String SUBJECTS = PUBLIC_ROOT + "subjects/";
 
     //------------------------------------------------------------------
     //------------------------------------------------------------------
     //------------------------------------------------------------------
-
-    public static String getMonitors(String siape) {
-        return MONITOR_PER_PROFESSOERS + siape + "/monitors/";
-    }
-
-    public static String setMonitor(String siape, String cpf) {
-        return MONITOR_PER_PROFESSOERS + siape + cpf;
-    }
-
-    public static String getChildProfSubjects(String fbUserID) {
-        return PROFESSOR + fbUserID + "/subjects/";
-    }
+//
+//    public static String getMonitors(String siape) {
+//        return MONITOR_PER_PROFESSOERS + siape + "/monitors/";
+//    }
+//
+//    public static String setMonitor(String siape, String cpf) {
+//        return MONITOR_PER_PROFESSOERS + siape + cpf;
+//    }
+//
+//    public static String getChildProfSubjects(String fbUserID) {
+//        return PROFESSOR + fbUserID + "/subjects/";
+//    }
 
 
     /*
@@ -77,7 +87,7 @@ public abstract class FirebaseUtils {
      * -> addMonitorAtProfessor(...)
      */
     public static String getChildProfMonitors(Context context, String siape) {
-        return MONITOR_PER_PROFESSOERS + siape + "/";
+        return MONITORS_LIST + siape + "/";
     }
 
     /* Add Monitors
@@ -85,60 +95,75 @@ public abstract class FirebaseUtils {
      * -> addMonitorAtProfessor(...)
      */
 
-    private static void addMonitorAtList(String siape, String cpf) {
-        String key = siape + "/" + cpf;
-        String rootDir = LIST_MONITOR + "/" + key;
+    private static void addMonitorsAtList(String siape, HashMap<String, Monitor> monitor) {
+        String rootDir = PROFESSOR_ROOT + "/" + siape + "/"  + MONITORS;
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(rootDir);
+        mDatabase.setValue(monitor);
+    }
+
+
+    public static void updateMonitors(Context mContext, String cpf, HashMap<String, Monitor> monitors) {
+        String siape = UserDao.getVinculoDefault(mContext).getIdentificador();
+        addMonitorsAtList(siape, monitors);
+        addMonitorAtProfList(siape, cpf);
+    }
+
+    public static void addMonitors() {
+
+    }
+
+    private static void addMonitorAtProfList(String siape, String cpf) {
+        String rootDir = PROFESSOR_ROOT + "/" + siape  + "/" + MONITORS ;
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(rootDir);
         mDatabase.setValue(cpf);
     }
 
-    private static void addMonitorAtProfessor(String siape, String cpf, HashMap<String, Monitor> monitors) {
-        String rootDir = MONITOR_PER_PROFESSOERS + siape + "/";
+    private static void addMonitorAtMonitorsfList(String siape, String cpf, String monitoringCode) {
+        String rootDir = MONITORS_ROOT + "/" + cpf+ "/" + siape;
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(rootDir);
-        mDatabase.setValue(monitors);
+        mDatabase.setValue(monitoringCode);
     }
-
-    public static void addMonitor(Context mContext, String siape, String cpf, HashMap<String, Monitor> monitors) {
-        UserDao.getLocalUser(mContext);
-        addMonitorAtProfessor(siape, cpf, monitors);
-        addMonitorAtList(siape, cpf);
+    private static void updateMonitorAtMonitorsfList(String siape, String cpf, String monitoringCode) {
+        String rootDir = PROFESSOR_ROOT + "/" + siape + MONITORS + cpf;
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(rootDir);
+        mDatabase.setValue(monitoringCode);
     }
 
     /**
      * ======================================
-     * -------------- MONITORING ------------
+     * -------------- MONITORIA ------------
      * ======================================
      */
 
-    /* get URL MONITORING
+    /* get URL MONITORIA
      * -> addMonitorAtList(...)
      * -> addMonitorAtProfessor(...)
      */
 
-    public static void addMonitorings(Context context, Monitoring monitoring) {
-        int diaCount = 0;
-        for (Boolean dia : monitoring.getDias()) {
-            diaCount++;
-            if (dia) {
-                String siape = monitoring.getMonitor().getSiapeProfessor();
-                String cpf = monitoring.getMonitor().getCpfCnpj();
-                String rootDir = MONITORING + "/" + dia + "/" + monitoring.getCodigoComponente() + "/" + siape + "_" +  cpf;
-                DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(rootDir);
-                mDatabase.setValue(monitoring);
-            }
-        }
+
+
+    private static void addMonitoringAtProfList(String siape, String monitoringCode) {
+        String rootDir = PROFESSOR_ROOT + "/" + siape + "/" + MONITORING;
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(rootDir);
+        mDatabase.setValue(monitoringCode);
     }
-    /* Add Monitors
-     * -> addMonitorAtList(...)
-     * -> addMonitorAtProfessor(...)
-     */
+    private static void addMonitoringAtGeralList(String key, Monitoring monitoring) {
+        String rootDir = MONITORING_ROOT + monitoring.getDia() + "/" +key;
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(rootDir);
+        mDatabase.setValue(monitoring);
+    }
+    public static void addMonitoring(Context mContext, Monitoring monitoring) {
+        String monitoringCode = monitoring.getDia() + SPACER_KEY + monitoring.getCodigoComponente() + SPACER_KEY + monitoring.getClassTime();
+        String siape = UserDao.getVinculoDefault(mContext).getIdentificador();
+        String key =  monitoring.getCodigoComponente() + SPACER_KEY + siape +  SPACER_KEY + monitoring.getClassTime();
 
+        addMonitoringAtGeralList(key, monitoring);
+        addMonitoringAtProfList(siape, monitoringCode);
+        addMonitorAtMonitorsfList(siape,monitoring.getMonitor().getCpfCnpj(),monitoringCode);
+    }
 
-
-
-    public static String addMonitoringsDIR(Context context, String siape) {
-        return MONITORING;
-
+    public static String getMonitoringAtProfList(String siape){
+        return  PROFESSOR_ROOT + "/" + siape + "/" + MONITORING;
     }
 
 }

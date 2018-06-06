@@ -32,6 +32,6 @@ public abstract class ApiUtils {
     public static final String CONSULTA_USER = URLBASE_TEST + "usuario/v0.1/usuarios?"  + QUERY_LIMIT + QUERY_AND_ATIVO;
 
 
-    public static final String CONSULTA_TURMAS_USER = URLBASE_TEST + "turma/v0.1/turmas?id-discente=";
+    public static final String CONSULTA_TURMAS_USER = URLBASE_TEST + "turma/v0.1/turmas?id-docente=";
 
 }

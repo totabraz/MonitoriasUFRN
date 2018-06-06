@@ -137,7 +137,6 @@ public class ListAddMonitorsFragment extends Fragment {
     }
 
     private void getMonitoresUser() {
-
         String siape = UserDao.getVinculoDefault(mContext).getIdentificador();
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(FirebaseUtils.getChildProfMonitors(mContext, siape));
         ValueEventListener monitorListener = new ValueEventListener() {
@@ -291,7 +290,7 @@ public class ListAddMonitorsFragment extends Fragment {
                  * TESTARRRRRRRRRRRRR
                  * TESTARRRRRRRRRRRRR
                  */
-                FirebaseUtils.addMonitor(mContext, siape, lastCpf, monitors);
+                FirebaseUtils.updateMonitors(mContext, lastCpf, monitors);
                 updateListMonitors();
                 tiMatricula.setText("");
                 mProgressBar.setVisibility(android.view.View.GONE);

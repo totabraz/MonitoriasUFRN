@@ -1,15 +1,17 @@
 package totabraz.com.monitoriasufrn.domain;
 
-import java.util.ArrayList;
-
-public class Monitoring extends Turma {
-    private Monitor monitor;
+public class Monitoring {
+    private User monitor;
     private String horarioM;
     private String horarioT;
     private String horarioN;
     private String setor;
     private String sala;
-    private ArrayList<Boolean> dias;
+    private String dia;
+    private String codigoComponente;
+    private String nomeComponente;
+    private String siglaComponente;
+    private String Observacao;
 
 
     public Monitoring() {
@@ -22,12 +24,19 @@ public class Monitoring extends Turma {
 
     public String getClassTime() {
         String time = "";
-        if (horarioM.length() > 0) time = horarioM + " - ";
-        if (horarioT.length() > 0) time = horarioT + " - ";
-        if (horarioN.length() > 0) time = horarioN + " - ";
+        if (horarioM.length() > 0) time += horarioM;
+        if (horarioT.length() > 0) time += horarioT;
+        if (horarioN.length() > 0) time += horarioN;
         return time;
     }
 
+    public User getMonitor() {
+        return monitor;
+    }
+
+    public void setMonitor(User monitor) {
+        this.monitor = monitor;
+    }
 
     public String getHorarioM() {
         return horarioM;
@@ -53,14 +62,6 @@ public class Monitoring extends Turma {
         this.horarioN = horarioN;
     }
 
-    public Monitor getMonitor() {
-        return monitor;
-    }
-
-    public void setMonitor(Monitor monitor) {
-        this.monitor = monitor;
-    }
-
     public String getSetor() {
         return setor;
     }
@@ -77,11 +78,43 @@ public class Monitoring extends Turma {
         this.sala = sala;
     }
 
-    public ArrayList<Boolean> getDias() {
-        return dias;
+    public String getDia() {
+        return dia;
     }
 
-    public void setDias(ArrayList<Boolean> dias) {
-        this.dias = dias;
+    public void setDia(String dia) {
+        this.dia = dia;
+    }
+
+    public String getCodigoComponente() {
+        return codigoComponente;
+    }
+
+    public void setCodigoComponente(String codigoComponente) {
+        this.codigoComponente = codigoComponente;
+    }
+
+    public String getNomeComponente() {
+        return nomeComponente;
+    }
+
+    public void setNomeComponente(String nomeComponente) {
+        this.nomeComponente = nomeComponente;
+    }
+
+    public String getSiglaComponente() {
+        return siglaComponente;
+    }
+
+    public void setSiglaComponente(String siglaComponente) {
+        this.siglaComponente = siglaComponente;
+    }
+
+    public String getObservacao() {
+        return Observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        Observacao = observacao;
     }
 }

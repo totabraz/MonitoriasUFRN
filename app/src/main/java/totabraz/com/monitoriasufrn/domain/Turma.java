@@ -7,37 +7,26 @@ public class Turma {
 
     @JsonProperty("codigo-componente")
     private String codigoComponente;
-
     @JsonProperty("codigo-turma")
     private String codigoTurma;
-
     @JsonProperty("descricao-horario")
     private String descricaoHorario;
-
     @JsonProperty("id-componente")
     private long idComponente;
-
     @JsonProperty("id-discente")
     private long idDiscente;
-
     @JsonProperty("id-docente")
     private long idDocente;
-
     @JsonProperty("id-docente-externo")
     private long idDocenteExterno;
-
     @JsonProperty("id-situacao-turma")
     private long idSituacaoTurma;
-
     @JsonProperty("id-turma")
     private long idTurma;
-
     @JsonProperty("id-unidade")
     private long idUnidade;
-
     @JsonProperty("nome-componente")
     private String nomeComponente;
-
     @JsonProperty("sigla-nivel")
     private String siglaNivel;
     private long ano;

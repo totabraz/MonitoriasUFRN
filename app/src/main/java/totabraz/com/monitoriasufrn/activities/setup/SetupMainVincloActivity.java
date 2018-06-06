@@ -33,7 +33,6 @@ public class SetupMainVincloActivity extends AppCompatActivity {
         setContentView(R.layout.activity_setup_main_vinclo);
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.vinculos);
-//        getSupportActionBar().setTitle(R.string.vinculos);
         getSupportActionBar().hide();
 
         setupView();

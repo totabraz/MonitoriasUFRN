@@ -21,6 +21,7 @@ import io.paperdb.Paper;
 import totabraz.com.monitoriasufrn.activities.setup.LoginActivity;
 import totabraz.com.monitoriasufrn.apisinfo.JApi;
 import totabraz.com.monitoriasufrn.domain.Monitor;
+import totabraz.com.monitoriasufrn.domain.Monitoring;
 import totabraz.com.monitoriasufrn.domain.User;
 
 public abstract class SysUtils {
@@ -76,6 +77,11 @@ public abstract class SysUtils {
     public static ArrayList<Monitor> getGetArrayMonitors(HashMap<String, Monitor> monitors) {
         Collection<Monitor> values = monitors.values();
         return  new ArrayList<Monitor>(values);
+    }
+
+    public static ArrayList<Monitoring> getGetArrayMonitoring(HashMap<String, Monitoring> monitoring) {
+        Collection<Monitoring> values = monitoring.values();
+        return  new ArrayList<Monitoring>(values);
     }
 
     /**

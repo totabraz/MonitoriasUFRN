@@ -6,30 +6,23 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 import totabraz.com.monitoriasufrn.R;
-import totabraz.com.monitoriasufrn.domain.Monitoring;
+import totabraz.com.monitoriasufrn.utils.FirebaseUtils;
 
-public class ListMonitoringAdapter extends RecyclerView.Adapter<ListMonitoringAdapter.Holder> {
-    private ArrayList<Monitoring> monitorings;
+public class ListMonitoringShortAdapter extends RecyclerView.Adapter<ListMonitoringShortAdapter.Holder> {
+    private ArrayList<String> monitorings;
     private Context mContext;
     private String cpfMonitor;
 
-    public ListMonitoringAdapter(Context context, ArrayList<Monitoring> monitorings) {
+    public ListMonitoringShortAdapter(Context context, ArrayList<String> monitorings) {
         this.monitorings = monitorings;
         this.mContext = context;
         this.cpfMonitor = null;
-    }
-    public ListMonitoringAdapter(Context context, ArrayList<Monitoring> monitorings, String cpfMonitor) {
-        this.monitorings = monitorings;
-        this.mContext = context;
-        this.cpfMonitor = cpfMonitor;
-
     }
 
     @NonNull
@@ -41,16 +34,17 @@ public class ListMonitoringAdapter extends RecyclerView.Adapter<ListMonitoringAd
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, final int position) {
-        final Monitoring monitoring = monitorings.get(position);
-        holder.tvSigla.setText(monitoring.getSiglaComponente());
-        holder.tvTurma.setText(monitoring.getNomeComponente());
-        holder.tvSector.setText(monitoring.getSetor());
-        holder.tvClass.setText(monitoring.getSala());
-        holder.tvMonitor.setText(monitoring.getMonitor().getNomePessoa());
-        holder.tvTime.setText(monitoring.getClassTime());
-//
-//        holder.tvTitle.setText(monitor.getNomePessoa());
-        if (cpfMonitor!=null){
+        final String monitoring = monitorings.get(position);
+        String[] parts = monitoring.split(FirebaseUtils.SPACER_KEY);
+        String part1 = parts[0]; // d
+        String part2 = parts[1]; // codigo
+        String part3 = parts[2]; // turno
+
+        holder.tvDia.setText(part1);
+        holder.tvTurma.setText(part2);
+        holder.tvTurno.setText(part3);
+
+        if (cpfMonitor != null) {
             holder.ivBtn.setVisibility(View.VISIBLE);
             holder.ivBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -67,24 +61,20 @@ public class ListMonitoringAdapter extends RecyclerView.Adapter<ListMonitoringAd
     }
 
     class Holder extends RecyclerView.ViewHolder {
-        private TextView tvSigla;
         private TextView tvTurma;
-        private TextView tvSector;
-        private TextView tvClass;
-        private TextView tvMonitor;
-        private TextView tvTime;
+        private TextView tvDia;
+        private TextView tvTurno;
         private ImageView ivBtn;
 
 
         public Holder(View itemView) {
             super(itemView);
-            tvSigla = itemView.findViewById(R.id.tvSigla);
+
             tvTurma = itemView.findViewById(R.id.tvTurma);
-            tvSector = itemView.findViewById(R.id.tvSector);
-            tvClass = itemView.findViewById(R.id.tvClass);
-            tvMonitor = itemView.findViewById(R.id.tvMonitor);
-            tvTime = itemView.findViewById(R.id.tvTime);
             ivBtn = itemView.findViewById(R.id.ivBtn);
+            tvDia = itemView.findViewById(R.id.tvDia);
+            tvTurno = itemView.findViewById(R.id.tvTurno);
+
 
             ivBtn.setVisibility(View.GONE);
         }
