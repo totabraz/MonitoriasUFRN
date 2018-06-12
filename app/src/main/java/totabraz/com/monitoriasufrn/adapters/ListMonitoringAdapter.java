@@ -6,7 +6,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,51 +13,82 @@ import java.util.ArrayList;
 
 import totabraz.com.monitoriasufrn.R;
 import totabraz.com.monitoriasufrn.domain.Monitoring;
+import totabraz.com.monitoriasufrn.utils.SysUtils;
 
-public class ListMonitoringAdapter extends RecyclerView.Adapter<ListMonitoringAdapter.Holder> {
-    private ArrayList<Monitoring> monitorings;
+public class ListMonitoringAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+
+    private ArrayList<Object> monitorings;
     private Context mContext;
     private String cpfMonitor;
+    private View rootView;
 
-    public ListMonitoringAdapter(Context context, ArrayList<Monitoring> monitorings) {
+    public ListMonitoringAdapter(Context context, ArrayList<Object> monitorings) {
         this.monitorings = monitorings;
         this.mContext = context;
         this.cpfMonitor = null;
     }
-    public ListMonitoringAdapter(Context context, ArrayList<Monitoring> monitorings, String cpfMonitor) {
+
+    public ListMonitoringAdapter(Context context, ArrayList<Object> monitorings, String cpfMonitor) {
         this.monitorings = monitorings;
         this.mContext = context;
         this.cpfMonitor = cpfMonitor;
 
     }
 
+    @Override
+    public int getItemViewType(int position) {
+        int viewType = 1;
+        String typeClass = "";
+        typeClass = typeClass.getClass().getName();
+        String nameArray = monitorings.get(position).getClass().getName();
+
+        if (nameArray.equals(typeClass)) viewType = 0;
+        return viewType;
+    }
+
+
     @NonNull
     @Override
-    public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cardview_monitoring_layout, null);
-        return new Holder(view);
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        if (viewType == 0) {
+            rootView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cardview_single_title_layout, null);
+            return new HolderTitle(rootView);
+        } else {
+            rootView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cardview_monitoring_layout, null);
+            return new HolderMonitoring(rootView);
+        }
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Holder holder, final int position) {
-        final Monitoring monitoring = monitorings.get(position);
-        holder.tvSigla.setText(monitoring.getSiglaComponente());
-        holder.tvTurma.setText(monitoring.getNomeComponente());
-        holder.tvSector.setText(monitoring.getSetor());
-        holder.tvClass.setText(monitoring.getSala());
-        holder.tvMonitor.setText(monitoring.getMonitor().getNomePessoa());
-        holder.tvTime.setText(monitoring.getClassTime());
-//
-//        holder.tvTitle.setText(monitor.getNomePessoa());
-        if (cpfMonitor!=null){
-            holder.ivBtn.setVisibility(View.VISIBLE);
-            holder.ivBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    monitorings.remove(position);
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
+        switch (holder.getItemViewType()) {
+            case 0:
+                String title = (String) monitorings.get(position);
+                title = SysUtils.getNameOfDay(Integer.parseInt(title));
+                HolderTitle holderTitle = (HolderTitle) holder;
+                holderTitle.tvTitle.setText(title);
+                break;
+            case 1:
+                HolderMonitoring holderMonitoring = (HolderMonitoring) holder;
+                Monitoring monitoring = (Monitoring) monitorings.get(position);
+                holderMonitoring.tvTurma.setText(monitoring.getNomeComponente());
+                holderMonitoring.tvSector.setText(monitoring.getSetor());
+                holderMonitoring.tvClass.setText(monitoring.getSala());
+                holderMonitoring.tvMonitor.setText(monitoring.getMonitor().getNomePessoa());
+                holderMonitoring.tvTime.setText(monitoring.getClassTime());
+                if (cpfMonitor != null) {
+                    holderMonitoring.ivBtn.setVisibility(View.VISIBLE);
+                    holderMonitoring.ivBtn.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            monitorings.remove(position);
+                        }
+                    });
                 }
-            });
+                break;
         }
+
+
     }
 
     @Override
@@ -66,8 +96,7 @@ public class ListMonitoringAdapter extends RecyclerView.Adapter<ListMonitoringAd
         return this.monitorings.size();
     }
 
-    class Holder extends RecyclerView.ViewHolder {
-        private TextView tvSigla;
+    class HolderMonitoring extends RecyclerView.ViewHolder {
         private TextView tvTurma;
         private TextView tvSector;
         private TextView tvClass;
@@ -76,9 +105,8 @@ public class ListMonitoringAdapter extends RecyclerView.Adapter<ListMonitoringAd
         private ImageView ivBtn;
 
 
-        public Holder(View itemView) {
+        public HolderMonitoring(View itemView) {
             super(itemView);
-            tvSigla = itemView.findViewById(R.id.tvSigla);
             tvTurma = itemView.findViewById(R.id.tvTurma);
             tvSector = itemView.findViewById(R.id.tvSector);
             tvClass = itemView.findViewById(R.id.tvClass);
@@ -87,6 +115,16 @@ public class ListMonitoringAdapter extends RecyclerView.Adapter<ListMonitoringAd
             ivBtn = itemView.findViewById(R.id.ivBtn);
 
             ivBtn.setVisibility(View.GONE);
+        }
+    }
+
+
+    class HolderTitle extends RecyclerView.ViewHolder {
+        private TextView tvTitle;
+
+        public HolderTitle(View itemView) {
+            super(itemView);
+            tvTitle = itemView.findViewById(R.id.tvTitle);
         }
     }
 }

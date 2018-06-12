@@ -6,12 +6,13 @@
     android:orientation="horizontal">
 
     <LinearLayout
+
+        android:padding="@dimen/space_xxs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/space_xxs"
         android:background="@color/bg_white_dark"
         android:orientation="vertical">
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -19,47 +20,57 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/tvSigla"
-                style="@style/text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:lines="1"
-                android:padding="@dimen/space_xxs"
-                android:text="     "
-                android:textColor="@color/textWhiteLight"
-                android:textStyle="bold" />
-
-            <TextView
-                style="@style/text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:lines="1"
-                android:padding="@dimen/space_xxs"
-                android:text=" - "
-                android:textColor="@color/textWhiteLight"
-                android:textStyle="bold" />
-
-            <TextView
                 android:id="@+id/tvTurma"
                 style="@style/text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:lines="1"
                 android:layout_weight="1"
-                android:padding="@dimen/space_xxs"
+                android:lines="1"
                 android:text="     "
                 android:textColor="@color/textWhiteLight"
                 android:textStyle="bold" />
+
             <ImageView
                 android:id="@+id/ivBtn"
-                android:src="@drawable/ic_close"
                 android:layout_width="35dp"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/space_xxs"
+                android:src="@drawable/ic_close"
                 android:text="x" />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="@dimen/space_xxxs"
+            android:textColor="@color/secondaryDarkColor" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                style="@style/textLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:lines="1"
+                android:text="Horário"
+                android:textColor="@color/textWhiteLight"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/tvTime"
+                style="@style/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:lines="1"
+                android:text="      "
+                android:textColor="@color/textWhiteLight" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -68,12 +79,11 @@
             android:orientation="horizontal">
 
             <TextView
-                style="@style/text"
+                style="@style/textLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:lines="1"
-                android:padding="@dimen/space_xxs"
                 android:text="Setor:"
                 android:textColor="@color/textWhiteLight"
                 android:textStyle="bold" />
@@ -85,21 +95,18 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:lines="1"
-                android:padding="@dimen/space_xxs"
                 android:text="     "
-                android:textColor="@color/textWhiteLight"
-                android:textStyle="bold" />
+                android:textColor="@color/textWhiteLight"/>
 
             <TextView
-                style="@style/text"
+                style="@style/textLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:lines="1"
-                android:padding="@dimen/space_xxs"
-                android:text="Sala:"
+                android:text=" - Sala:"
                 android:textColor="@color/textWhiteLight"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/tvClass"
@@ -108,10 +115,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:lines="1"
-                android:padding="@dimen/space_xxs"
                 android:text="     "
-                android:textColor="@color/textWhiteLight"
-                android:textStyle="bold" />
+                android:textColor="@color/textWhiteLight" />
         </LinearLayout>
 
         <LinearLayout
@@ -120,23 +125,11 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/tvTime"
-                style="@style/text"
+                style="@style/textLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:lines="1"
-                android:padding="@dimen/space_xxs"
-                android:text="      "
-                android:textColor="@color/textWhiteLight"
-                android:textStyle="bold" />
-            <TextView
-                style="@style/text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:lines="1"
-                android:padding="@dimen/space_xxs"
                 android:text="Monitor: "
                 android:textColor="@color/textWhiteLight"
                 android:textStyle="bold" />
@@ -149,10 +142,8 @@
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:lines="1"
-                android:padding="@dimen/space_xxs"
                 android:text="     "
-                android:textColor="@color/textWhiteLight"
-                android:textStyle="bold" />
+                android:textColor="@color/textWhiteLight" />
         </LinearLayout>
     </LinearLayout>
 

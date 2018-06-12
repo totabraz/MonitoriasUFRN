@@ -7,6 +7,8 @@
     <dimen name="nav_header_padding_toolbar">104dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
+    <dimen name="space_xxxs">4dp</dimen>
+
     <dimen name="space_xxs">8dp</dimen>
     <dimen name="space_xs">16dp</dimen>
     <dimen name="space_sm">32dp</dimen>

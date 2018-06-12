@@ -16,4 +16,23 @@
         </menu>
     </item>
 
+    <item
+        android:title="Gerenciar">
+        <menu>
+            <item
+                android:id="@+id/nav_my_monitors"
+                android:icon="@drawable/ic_account_circle"
+                android:title="Meus Monitores" />
+            <item
+                android:id="@+id/nav_my_subjects"
+                android:icon="@drawable/ic_event_note"
+                android:title="Minhas Matérias" />
+            <item
+                android:id="@+id/nav_my_observations"
+                android:icon="@drawable/ic_textsms"
+                android:title="Minhas Observação" />
+        </menu>
+    </item>
+
+
 </menu>

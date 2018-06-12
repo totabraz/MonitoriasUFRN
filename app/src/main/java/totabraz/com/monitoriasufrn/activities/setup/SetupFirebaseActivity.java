@@ -20,6 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 import io.paperdb.Paper;
 import totabraz.com.monitoriasufrn.R;
 import totabraz.com.monitoriasufrn.activities.MainActivity;
+import totabraz.com.monitoriasufrn.activities.MainTeacherActivity;
 import totabraz.com.monitoriasufrn.activities.error.ErrorMsgActivity;
 import totabraz.com.monitoriasufrn.dao.UserDao;
 import totabraz.com.monitoriasufrn.domain.User;
@@ -107,7 +108,7 @@ public class SetupFirebaseActivity extends AppCompatActivity {
     private void goToNextActivity() {
         Intent intent;
         if (user.getVinculos().size() == 1) {
-            intent = new Intent(getApplicationContext(), MainActivity.class);
+            intent = new Intent(getApplicationContext(), MainTeacherActivity.class);
             UserDao.setVinculoDefault(getApplicationContext(), user.getVinculos().get(0));
         } else if (user.getVinculos().size() > 1) {
             intent = new Intent(getApplicationContext(), SetupMainVincloActivity.class);

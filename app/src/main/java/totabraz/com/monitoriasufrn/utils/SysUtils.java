@@ -1,12 +1,8 @@
 package totabraz.com.monitoriasufrn.utils;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
-
-import com.google.firebase.auth.FirebaseAuth;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -17,30 +13,28 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import io.paperdb.Paper;
-import totabraz.com.monitoriasufrn.activities.setup.LoginActivity;
 import totabraz.com.monitoriasufrn.apisinfo.JApi;
 import totabraz.com.monitoriasufrn.domain.Monitor;
 import totabraz.com.monitoriasufrn.domain.Monitoring;
-import totabraz.com.monitoriasufrn.domain.User;
 
 public abstract class SysUtils {
 
     public static final HashMap<Integer, String> dias = (HashMap<Integer, String>) createDias();
 
-    private static Map<Integer, String> createDias(){
+    private static Map<Integer, String> createDias() {
         Map<Integer, String> mDias = new HashMap<Integer, String>();
-        mDias.put(1,"Domingo");
-        mDias.put(2,"Segunda-Feira");
-        mDias.put(3,"Terça-Feira");
-        mDias.put(4,"Quarta-Feira");
-        mDias.put(5,"Quinta-Feira");
-        mDias.put(6,"Sexta-Feira");
-        mDias.put(7,"Sábado");
+        mDias.put(1, "Domingo");
+        mDias.put(2, "Segunda-Feira");
+        mDias.put(3, "Terça-Feira");
+        mDias.put(4, "Quarta-Feira");
+        mDias.put(5, "Quinta-Feira");
+        mDias.put(6, "Sexta-Feira");
+        mDias.put(7, "Sábado");
         return mDias;
     }
 
     public static final String KEY_PROFESSOR = "PROFESSOR";
+    public static final String KEY_COMPONENT = "KEY_COMPONENT";
 
     /**
      * Header to use on Async request
@@ -76,16 +70,15 @@ public abstract class SysUtils {
      */
     public static ArrayList<Monitor> getGetArrayMonitors(HashMap<String, Monitor> monitors) {
         Collection<Monitor> values = monitors.values();
-        return  new ArrayList<Monitor>(values);
+        return new ArrayList<Monitor>(values);
     }
 
     public static ArrayList<Monitoring> getGetArrayMonitoring(HashMap<String, Monitoring> monitoring) {
         Collection<Monitoring> values = monitoring.values();
-        return  new ArrayList<Monitoring>(values);
+        return new ArrayList<Monitoring>(values);
     }
 
     /**
-     *
      * Make toasts on a easier way
      *
      * @param context
@@ -112,15 +105,31 @@ public abstract class SysUtils {
      * Methods to verify FirebaseAuth
      */
 
-    public static FirebaseAuth verifyFirebaseUser(Activity activity) {
-        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-        if (firebaseAuth.getCurrentUser() == null) {
-            activity.finish();
-            activity.getApplicationContext().startActivity(new Intent(activity.getApplicationContext(), LoginActivity.class));
-        } else {
-            return firebaseAuth;
+    public static String getNameOfDay(int dia) {
+        String diaFinal = "";
+        switch (dia) {
+            case 0:
+                diaFinal = "Domingo";
+                break;
+            case 1:
+                diaFinal = "Segunda-feira";
+                break;
+            case 2:
+                diaFinal = "Terça-feira";
+                break;
+            case 3:
+                diaFinal = "Quarta-feira";
+                break;
+            case 4:
+                diaFinal = "Quinta-feira";
+                break;
+            case 5:
+                diaFinal = "Sexta-feira";
+                break;
+            case 6:
+                diaFinal = "Sábado";
         }
-        return null;
-    }
 
+        return diaFinal;
+    }
 }

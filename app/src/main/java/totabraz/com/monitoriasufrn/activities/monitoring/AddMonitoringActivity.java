@@ -18,8 +18,6 @@ import android.widget.Toast;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -197,29 +195,32 @@ public class AddMonitoringActivity extends AppCompatActivity {
         if (horarioM4.isChecked()) turnoM += "4";
         if (horarioM5.isChecked()) turnoM += "5";
         if (horarioM6.isChecked()) turnoM += "6";
-        if (turnoM.length() > 0) turnoM += "M" + turnoM;
+        if (turnoM.length() > 0) turnoM = "M" + turnoM;
         if (horarioT1.isChecked()) turnoT += "1";
         if (horarioT2.isChecked()) turnoT += "2";
         if (horarioT3.isChecked()) turnoT += "3";
         if (horarioT4.isChecked()) turnoT += "4";
         if (horarioT5.isChecked()) turnoT += "5";
         if (horarioT6.isChecked()) turnoT += "6";
-        if (turnoT.length() > 0) turnoT += "T" + turnoT;
+        if (turnoT.length() > 0) turnoT = "T" + turnoT;
         if (horarioN1.isChecked()) turnoN += "1";
         if (horarioN2.isChecked()) turnoN += "2";
         if (horarioN3.isChecked()) turnoN += "3";
         if (horarioN4.isChecked()) turnoN += "4";
-        if (turnoN.length() > 0) turnoN += "N" + turnoN;
+        if (turnoN.length() > 0) turnoN = "N" + turnoN;
 
         return turnoM + turnoT + turnoN;
     }
 
     private boolean checkFormInput() {
         boolean checked = false;
-        RadioButton checkedRadioButton = rgDayOfWeek.findViewById(rgDayOfWeek.getCheckedRadioButtonId());
+//        RadioButton checkedRadioButton = rgDayOfWeek.findViewById(rgDayOfWeek.getCheckedRadioButtonId());
+        int radioButtonIn = rgDayOfWeek.getCheckedRadioButtonId();
+        View rb = rgDayOfWeek.findViewById(radioButtonIn);
+        int indexOfDay = rgDayOfWeek.indexOfChild(rb);
+        dia = String.valueOf(indexOfDay);
         setor = tiSetor.getText().toString();
         sala = tiSala.getText().toString();
-        dia = checkedRadioButton.getText().toString();
         if (tvNomeTurma.length() > 0 &&
                 tvNomeMonitor.length() > 0 &&
                 getTurnos().length() > 0 &&
@@ -242,6 +243,7 @@ public class AddMonitoringActivity extends AppCompatActivity {
         monitoring.setHorarioT(turnoT);
         monitoring.setHorarioN(turnoN);
         monitoring.setMonitor(user);
+
         monitoring.setDia(dia);
         monitoring.setCodigoComponente(turma.getCodigoComponente());
         monitoring.setNomeComponente(turma.getNomeComponente());

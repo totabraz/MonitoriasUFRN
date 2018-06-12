@@ -1,24 +1,20 @@
 package totabraz.com.monitoriasufrn.adapters;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 import totabraz.com.monitoriasufrn.R;
-import totabraz.com.monitoriasufrn.activities.MainActivity;
-import totabraz.com.monitoriasufrn.activities.setup.SetupMainVincloActivity;
+import totabraz.com.monitoriasufrn.activities.MainTeacherActivity;
 import totabraz.com.monitoriasufrn.dao.UserDao;
 import totabraz.com.monitoriasufrn.domain.Vinculo;
-import totabraz.com.monitoriasufrn.enun.TipoVinculoEnum;
 
 public class ListVinculosAdapter extends RecyclerView.Adapter<ListVinculosAdapter.Holder> {
     private ArrayList<Vinculo> vinculos;
@@ -45,8 +41,8 @@ public class ListVinculosAdapter extends RecyclerView.Adapter<ListVinculosAdapte
         holder.tvTitlte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserDao.setVinculoDefault(activity, vinculo );
-                activity.startActivity(new Intent(activity.getApplicationContext(), MainActivity.class));
+                UserDao.setVinculoDefault(activity, vinculo);
+                activity.startActivity(new Intent(activity.getApplicationContext(), MainTeacherActivity.class));
                 activity.finish();
             }
         });

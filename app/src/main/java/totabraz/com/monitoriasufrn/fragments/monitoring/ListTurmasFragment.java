@@ -1,11 +1,9 @@
 package totabraz.com.monitoriasufrn.fragments.monitoring;
 
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
 import android.app.Fragment;
-import android.support.annotation.Nullable;
+import android.content.Context;
+import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,7 +11,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -28,61 +25,43 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import totabraz.com.monitoriasufrn.R;
-import totabraz.com.monitoriasufrn.activities.monitoring.AddMonitoringActivity;
-import totabraz.com.monitoriasufrn.adapters.ListMonitoringAdapter;
-import totabraz.com.monitoriasufrn.adapters.ListMonitoringShortAdapter;
+import totabraz.com.monitoriasufrn.activities.MainActivity;
+import totabraz.com.monitoriasufrn.adapters.ListSubjectShortAdapter;
 import totabraz.com.monitoriasufrn.dao.UserDao;
-import totabraz.com.monitoriasufrn.domain.Monitor;
 import totabraz.com.monitoriasufrn.domain.Monitoring;
-import totabraz.com.monitoriasufrn.enums.TipoVinculoEnum;
 import totabraz.com.monitoriasufrn.utils.FirebaseUtils;
 import totabraz.com.monitoriasufrn.utils.SysUtils;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ListProfMonitoringFragment extends Fragment {
+public class ListTurmasFragment extends Fragment {
     private View rootView;
 
-    private ArrayList<Object> monitorings;
-    private String lastCpf;
-    private ObjectMapper objectMapper;
-    private ListMonitoringAdapter mAdapter;
+    private ListSubjectShortAdapter mAdapter;
     private String siape;
     private Context mContext;
 
-    private String componentToShow;
+    private HashMap<String, String> components;
 
 
-    private Button btnAdd;
     private ProgressBar progress;
     private RecyclerView rvMyList;
     private TextView tvNothingToShow;
 
 
-    public static ListProfMonitoringFragment newInstance() {
-        return new ListProfMonitoringFragment();
+    public static ListTurmasFragment newInstance() {
+        return new ListTurmasFragment();
     }
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_list_prof_monitoring, container, false);
-        monitorings = null;
-        componentToShow = null;
         mContext = getActivity().getApplicationContext();
         siape = UserDao.getVinculoDefault(mContext).getIdentificador();
-        Bundle bundle = getArguments();
-        if (bundle!=null){
-            componentToShow = bundle.getString(SysUtils.KEY_COMPONENT);;
-        }
         setupViews();
         init();
         return rootView;
@@ -90,64 +69,37 @@ public class ListProfMonitoringFragment extends Fragment {
 
 
     private void setupViews() {
-        monitorings = new ArrayList<>();
         rvMyList = rootView.findViewById(R.id.rvMyList);
         tvNothingToShow = rootView.findViewById(R.id.tvNothingToShow);
         progress = rootView.findViewById(R.id.progress);
-        btnAdd = rootView.findViewById(R.id.btnAdd);
-        int idTipo = Integer.parseInt(UserDao.getVinculoDefault(mContext).getIdTipoVinculo());
-        if ( idTipo == TipoVinculoEnum.DOCENTE.ordinal()) {
-            btnAdd.setVisibility(View.VISIBLE);
-            btnAdd.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(mContext, AddMonitoringActivity.class);
-                    if (Integer.parseInt(UserDao.getVinculoDefault(mContext).getIdTipoVinculo()) == TipoVinculoEnum.DOCENTE.ordinal()) {
-                        intent.putExtra(SysUtils.KEY_PROFESSOR, true);
-                    }
-                    startActivity(intent);
-                }
-            });
-        }
     }
 
     private void init() {
         progress.setVisibility(View.VISIBLE);
         tvNothingToShow.setVisibility(View.GONE);
         rvMyList.setVisibility(View.GONE);
-        getMonitoring();
+        getSubjects();
     }
 
 
-    private void getMonitoring() {
-        DatabaseReference mDatabase;
-        if (componentToShow!=null) mDatabase = FirebaseDatabase.getInstance().getReference().child(FirebaseUtils.getAllMonitoring()).child(componentToShow);
-        else mDatabase = FirebaseDatabase.getInstance().getReference().child(FirebaseUtils.getAllMonitoring());
+    private void getSubjects() {
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(FirebaseUtils.getAllMonitoring());
         ValueEventListener monitorListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                monitorings = new ArrayList<>();
+                components = new HashMap<>();
 
-                    for (DataSnapshot indexSnapshot : dataSnapshot.getChildren()) {
-
-                        for (DataSnapshot monitoringSnapshot : indexSnapshot.getChildren()) {
-                            String key = indexSnapshot.getKey();
-                            if (!monitorings.contains(key))monitorings.add(key);
-                            monitorings.add(monitoringSnapshot.getValue(Monitoring.class));
-
-
-                        }
-
+                for (DataSnapshot objSnapshot : dataSnapshot.getChildren()) {
+                    getSubjectName(objSnapshot);
                 }
 
-                if (monitorings != null && monitorings.size() > 0) {
+                if (components != null && components.size() > 0) {
                     RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(mContext);
-                    mAdapter = new ListMonitoringAdapter(mContext, monitorings);
+                    mAdapter = new ListSubjectShortAdapter(getActivity(),components);
                     rvMyList.setLayoutManager(mLayoutManager);
                     rvMyList.setItemAnimator(new DefaultItemAnimator());
                     rvMyList.setAdapter(mAdapter);
                 }
-
                 updateListMonitors();
             }
 
@@ -165,11 +117,23 @@ public class ListProfMonitoringFragment extends Fragment {
         mDatabase.addValueEventListener(monitorListener);
     }
 
+    private void getSubjectName(DataSnapshot objSnapshot) {
+
+        for (DataSnapshot indexSnapshot : objSnapshot.getChildren()) {
+            String key = objSnapshot.getKey();
+            for (DataSnapshot monitoringSnapshot : indexSnapshot.getChildren()) {
+                components.put(key, monitoringSnapshot.getValue(Monitoring.class).getNomeComponente());
+                break;
+            }
+        }
+    }
+
     /**
      * First steps after to get Firebase Users.
      */
+
     private void updateListMonitors() {
-        if (monitorings != null && monitorings.size() > 0) {
+        if (components != null && components.size() > 0) {
             rvMyList.setVisibility(View.VISIBLE);
             tvNothingToShow.setVisibility(View.GONE);
             if (mAdapter != null) mAdapter.notifyDataSetChanged();
@@ -179,5 +143,4 @@ public class ListProfMonitoringFragment extends Fragment {
         }
         progress.setVisibility(View.GONE);
     }
-
 }

@@ -25,8 +25,8 @@
     <color name="textWhiteDark">#414141</color>
     <color name="textWhiteLight">#888</color>
 
-    <color name="bg_white_dark">#e2e2e2</color>
-    <color name="bg_white">#fafafa</color>
+    <color name="bg_white_dark">#f0f5f5</color>
+    <color name="bg_white">#fdfdfd</color>
     <!--<color name="bg_white_light">#ffffff</color>-->
 
 </resources>

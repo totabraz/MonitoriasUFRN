@@ -1,4 +1,4 @@
-package totabraz.com.monitoriasufrn.enun;
+package totabraz.com.monitoriasufrn.enums;
 
 public enum TipoVinculoEnum {
 

@@ -2,10 +2,9 @@ package totabraz.com.monitoriasufrn.activities;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TextInputEditText;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -16,7 +15,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 
 import totabraz.com.monitoriasufrn.R;
 import totabraz.com.monitoriasufrn.fragments.monitoring.ListProfMonitoringFragment;
@@ -25,18 +23,18 @@ import totabraz.com.monitoriasufrn.fragments.monitors.ListAddMonitorsFragment;
 import totabraz.com.monitoriasufrn.fragments.observations.AddObservationFragment;
 import totabraz.com.monitoriasufrn.fragments.subject.ListSubjectsFragment;
 
-public class MainActivity extends AppCompatActivity
+public class MainTeacherActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private TextInputEditText toolbarSearchInput;
     private Toolbar toolbar;
     private Fragment fragment;
     private FragmentTransaction ft;
-    private Button btnLogin;
 
-    private void drawerPreset(){
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+    private void drawerPreset() {
+
+        DrawerLayout drawer = findViewById(R.id.drawer_layout_teacher);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -45,21 +43,16 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        toolbar= findViewById(R.id.toolbar);
+        setContentView(R.layout.activity_main_teacher);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         this.drawerPreset();
-        btnLogin = findViewById(R.id.btnLogin);
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), MainTeacherActivity.class));
-            }
-        });
+
         toolbarSearchInput = findViewById(R.id.toolbarSearchInput);
         fragment = ListTurmasFragment.newInstance();
         ft = getFragmentManager().beginTransaction();
@@ -85,6 +78,8 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -96,7 +91,7 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_search) {
-            if (toolbarSearchInput.getVisibility()==View.VISIBLE){
+            if (toolbarSearchInput.getVisibility()== View.VISIBLE){
                 toolbarSearchInput.setVisibility(View.GONE);
                 toolbarSearchInput.startAnimation(animScaleOpen);
             } else {
@@ -110,6 +105,9 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+
+
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -118,10 +116,16 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_monitorias) {
             fragment = ListProfMonitoringFragment.newInstance();
-        } else  if (id == R.id.nav_favourites) {
+        } else if (id == R.id.nav_favourites) {
 
+        } else if (id == R.id.nav_my_monitors) {
+            fragment = ListAddMonitorsFragment.newInstance();
+        } else if (id == R.id.nav_my_subjects) {
+            fragment = ListSubjectsFragment.newInstance();
+        } else if (id == R.id.nav_my_observations) {
+            fragment = AddObservationFragment.newInstance();
         }
-        if (fragment!= null){
+        if (fragment != null) {
             ft = getFragmentManager().beginTransaction();
             ft.replace(R.id.rlFragmentsArea, fragment);
             ft.addToBackStack(null);
@@ -131,6 +135,4 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
 }
