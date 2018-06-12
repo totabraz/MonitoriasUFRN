@@ -4,24 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".activities.MainActivity"
     android:elevation="4dp"
     android:padding="16dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activities.MainActivity"
     tools:showIn="@layout/app_bar_main">
+
     <RelativeLayout
         android:id="@+id/rlFragmentsArea"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg_area">
-    </RelativeLayout>
+        android:background="@drawable/bg_area" />
 
     <ProgressBar
         android:id="@+id/progress"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:visibility="gone"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true" />
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
 
 </RelativeLayout>

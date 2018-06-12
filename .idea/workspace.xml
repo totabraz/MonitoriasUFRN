@@ -17,48 +17,30 @@
     <bookmark url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add_monitoring.xml" line="350" />
     <bookmark url="file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/utils/SysUtils.java" line="128" />
     <bookmark url="file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/utils/SysUtils.java" line="133" />
+    <bookmark url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_add_observation.xml" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db673fa8-28c7-48b8-a7ff-14989700ca80" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/MainTeacherActivity.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/adapters/ListSubjectShortAdapter.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/domain/MonitoringShort.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/fragments/monitoring/ListTurmasFragment.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_camera.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_gallery.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_manage.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_send.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_share.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_slideshow.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_teacher.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/app_bar_main_teacher.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_main_teacher.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_list_turmas.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_cardview_single_title_layout.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_cardview_subject_layout.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_main_teacher.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/menu/activity_main_teacher_drawer.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/menu/main_teacher.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/MainActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/monitoring/AddMonitoringActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/monitoring/AddMonitoringActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/setup/SetupFirebaseActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/setup/SetupFirebaseActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/adapters/ListMonitoringAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/adapters/ListMonitoringAdapter.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/adapters/ListVinculosAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/adapters/ListVinculosAdapter.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/enun/TipoVinculoEnum.java" afterPath="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/enums/TipoVinculoEnum.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/fragments/monitoring/ListProfMonitoringFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/fragments/monitoring/ListProfMonitoringFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/fragments/monitors/ListAddMonitorsFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/fragments/monitors/ListAddMonitorsFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/utils/FirebaseUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/utils/FirebaseUtils.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/utils/SysUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/utils/SysUtils.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_cardview_monitoring_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_cardview_monitoring_layout.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/MainTeacherActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/MainTeacherActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/subjects/SubjectActivity.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_teacher.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_teacher.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_setup_firebase.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_setup_firebase.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_setup_main_vinclo.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_setup_main_vinclo.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_setup_user.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_setup_user.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_subject.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/app_bar_main_teacher.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/app_bar_main_teacher.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_main_teacher.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_main_teacher.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/activity_main_teacher_drawer.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/activity_main_teacher_drawer.xml" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/drawables.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/drawables.xml" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -75,7 +57,17 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="MonitoriasUFRN" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -83,41 +75,29 @@
     <favorites_list name="MonitoriasUFRN" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="122" column="9" lean-forward="false" selection-start-line="122" selection-start-column="9" selection-end-line="122" selection-end-column="9" />
+            <state relative-caret-position="553">
+              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding>
-                <element signature="e#1657#1688#0" expanded="true" />
-                <element signature="e#1690#1722#0" expanded="true" />
-                <element signature="e#2295#2506#0" expanded="true" />
-                <element signature="e#2505#2506#0" expanded="true" />
+                <element signature="e#2042#2247#0" expanded="true" />
+                <element signature="e#2246#2247#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_main_drawer.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml">
+      <file leaf-file-name="MainTeacherActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/MainTeacherActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SetupFirebaseActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/setup/SetupFirebaseActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="113" column="72" lean-forward="false" selection-start-line="113" selection-start-column="72" selection-end-line="113" selection-end-column="72" />
-              <folding />
+            <state relative-caret-position="187">
+              <caret line="39" column="27" lean-forward="false" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
+              <folding>
+                <element signature="e#2222#2377#0" expanded="true" />
+                <element signature="e#2376#2377#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -135,10 +115,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>GONE</find>
-      <find>content</find>
-      <find>Adapte</find>
-      <find>addM</find>
       <find>get(0)</find>
       <find>a{</find>
       <find>addMonitor() _</find>
@@ -165,6 +141,10 @@
       <find>adapter</find>
       <find>Main</find>
       <find>btnLogin</find>
+      <find>btn</find>
+      <find>compie</find>
+      <find>view</find>
+      <find>na viga</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2206,16 +2186,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/enun/Enum.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/enun/TipoVinculoEnum.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/dao/UserDao.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_cardview_layout_btn_x.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_cardview_layout.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/services/UserAddMonitorService.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_setup_main_vinclo.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/adapters/ListMonitoringsAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/domain/Horario.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_list_monitoring.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/monitoring/addMonitoringActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_list_add_monitors.xml" />
@@ -2243,24 +2213,34 @@
         <option value="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/fragments/monitoring/ListTurmasFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/fragments/monitoring/ListProfMonitoringFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/adapters/ListMonitoringAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_cardview_monitoring_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/activity_main_teacher_drawer.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/MainTeacherActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main_teacher.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/MainTeacherActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_main_teacher.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/app_bar_main_teacher.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/setup/SetupFirebaseActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/adapters/ListVinculosAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_main_teacher.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_setup_user.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_setup_firebase.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_setup_main_vinclo.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/app_bar_main_teacher.xml" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/drawables.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/activity_main_teacher_drawer.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main_teacher.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/MainTeacherActivity.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="22" />
     <option name="width" value="1290" />
     <option name="height" value="1028" />
@@ -2283,6 +2263,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
@@ -2312,23 +2295,13 @@
             <path>
               <item name="MonitoriasUFRN" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="monitoriasufrn" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="activities" type="462c0819:PsiDirectoryNode" />
-              <item name="monitoring" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MonitoriasUFRN" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="monitoriasufrn" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="activities" type="462c0819:PsiDirectoryNode" />
-              <item name="setup" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
             </path>
             <path>
               <item name="MonitoriasUFRN" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="MonitoriasUFRN" type="1abcf292:AndroidViewProjectNode" />
@@ -2354,20 +2327,21 @@
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
               <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
+            <path>
+              <item name="MonitoriasUFRN" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="device.picker.selection" value="80acbf09" />
-    <property name="SearchEverywhereHistoryKey" value="ListPro&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/fragments/monitoring/ListProfMonitoringFragment.java&#10;Adapter&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/adapters/ListSubjectShortAdapter.java&#10;MainAc&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/activities/MainActivity.java&#10;Sys&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/utils/SysUtils.java&#10;ListAd&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/fragments/monitors/ListAddMonitorsFragment.java&#10;List&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/fragments/monitors/ListAddMonitorsFragment.java&#10;Monitoring&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/domain/Monitoring.java&#10;Login&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/services/UserLoginService.java&#10;Tur&#9;PSI&#9;JAVA://totabraz.com.monitoriasufrn.domain.Turma&#10;GetTurma&#9;PSI&#9;JAVA://totabraz.com.monitoriasufrn.activities.monitoring.AddMonitoringActivity#getTurma&#10;Turma&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/services/TurmaService.java&#10;subject&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/fragments/subject/ListSubjectsFragment.java&#10;Turm&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/services/TurmaService.java&#10;Add&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/activities/monitoring/AddMonitoringActivity.java&#10;Users&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/services/UserService.java&#10;monitoring&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/domain/Monitoring.java&#10;sys&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/utils/SysUtils.java&#10;Fire&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/utils/FirebaseUtils.java&#10;Fireba&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/utils/FirebaseUtils.java&#10;fireba&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/utils/FirebaseUtils.java&#10;Conten&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/res/layout/content_main.xml&#10;ListVinc&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/adapters/ListVinculosAdapter.java&#10;listad&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/adapters/ListMonitoringAdapter.java&#10;FirebaseUti&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/utils/FirebaseUtils.java&#10;main&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/res/layout/content_main.xml&#10;setup_vin&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/res/layout/activity_setup_main_vinclo.xml&#10;vinculo&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/adapters/ListVinculosAdapter.java&#10;_main&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/res/layout/activity_main.xml&#10;Main&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/res/layout/activity_main.xml&#10;setupvinc&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/activities/setup/SetupMainVincloActivity.java&#10;setupuser&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/activities/setup/SetupUserActivity.java&#10;set&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/activities/setup/SetupFirebaseActivity.java&#10;CONTENT&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/res/layout/content_main.xml&#10;ACTIVITY_MAI&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/res/layout/activity_main.xml&#10;SetupFirebase&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/activities/setup/SetupFirebaseActivity.java&#10;FirebaseUt&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/utils/FirebaseUtils.java&#10;frag&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/res/layout/fragment_list_add_monitors.xml&#10;setup_&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/res/layout/activity_setup_user.xml&#10;_logi&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/res/layout/activity_login.xml&#10;content&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/res/layout/content_main.xml&#10;Main ac&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/activities/MainActivity.java&#10;SetupF&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/activities/setup/SetupFirebaseActivity.java&#10;Util&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/utils/SysUtils.java&#10;Utils&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/utils/SysUtils.java&#10;Firebas&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/activities/setup/SetupFirebaseActivity.java&#10;User&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/domain/User.java&#10;SetupU&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/activities/setup/SetupUserActivity.java&#10;Firebase&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/activities/setup/SetupFirebaseActivity.java&#10;UserSer&#9;PSI&#9;JAVA://totabraz.com.monitoriasufrn.services.UserLoginService&#10;Setup&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/activities/setup/SetupUserActivity.java" />
+    <property name="SearchEverywhereHistoryKey" value="setupFire&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/activities/setup/SetupFirebaseActivity.java&#10;MainA&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/activities/MainActivity.java&#10;ListPro&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/fragments/monitoring/ListProfMonitoringFragment.java&#10;Adapter&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/adapters/ListSubjectShortAdapter.java&#10;MainAc&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/activities/MainActivity.java&#10;Sys&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/utils/SysUtils.java&#10;ListAd&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/fragments/monitors/ListAddMonitorsFragment.java&#10;List&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/fragments/monitors/ListAddMonitorsFragment.java&#10;Monitoring&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/domain/Monitoring.java&#10;Login&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/services/UserLoginService.java&#10;Tur&#9;PSI&#9;JAVA://totabraz.com.monitoriasufrn.domain.Turma&#10;GetTurma&#9;PSI&#9;JAVA://totabraz.com.monitoriasufrn.activities.monitoring.AddMonitoringActivity#getTurma&#10;Turma&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/services/TurmaService.java&#10;subject&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/fragments/subject/ListSubjectsFragment.java&#10;Turm&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/services/TurmaService.java&#10;Add&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/activities/monitoring/AddMonitoringActivity.java&#10;Users&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/services/UserService.java&#10;monitoring&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/domain/Monitoring.java&#10;sys&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/utils/SysUtils.java&#10;Fire&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/utils/FirebaseUtils.java&#10;Fireba&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/utils/FirebaseUtils.java&#10;fireba&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/utils/FirebaseUtils.java&#10;Conten&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/res/layout/content_main.xml&#10;ListVinc&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/adapters/ListVinculosAdapter.java&#10;listad&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/adapters/ListMonitoringAdapter.java&#10;FirebaseUti&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/utils/FirebaseUtils.java&#10;main&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/res/layout/content_main.xml&#10;setup_vin&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/res/layout/activity_setup_main_vinclo.xml&#10;vinculo&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/adapters/ListVinculosAdapter.java&#10;_main&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/res/layout/activity_main.xml&#10;Main&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/res/layout/activity_main.xml&#10;setupvinc&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/activities/setup/SetupMainVincloActivity.java&#10;setupuser&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/activities/setup/SetupUserActivity.java&#10;set&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/activities/setup/SetupFirebaseActivity.java&#10;CONTENT&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/res/layout/content_main.xml&#10;ACTIVITY_MAI&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/res/layout/activity_main.xml&#10;SetupFirebase&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/activities/setup/SetupFirebaseActivity.java&#10;FirebaseUt&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/utils/FirebaseUtils.java&#10;frag&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/res/layout/fragment_list_add_monitors.xml&#10;setup_&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/res/layout/activity_setup_user.xml&#10;_logi&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/res/layout/activity_login.xml&#10;content&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/res/layout/content_main.xml&#10;Main ac&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/activities/MainActivity.java&#10;SetupF&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/activities/setup/SetupFirebaseActivity.java&#10;Util&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/utils/SysUtils.java&#10;Utils&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/utils/SysUtils.java&#10;Firebas&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/activities/setup/SetupFirebaseActivity.java&#10;User&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/domain/User.java&#10;SetupU&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/activities/setup/SetupUserActivity.java&#10;Firebase&#9;FILE&#9;file:///Users/totabraz/Dropbox/Deveart/workspace-dev/android/MonitoriasUFRN/app/src/main/java/totabraz/com/monitoriasufrn/activities/setup/SetupFirebaseActivity.java" />
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -2585,30 +2559,30 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1290" height="1028" extended-state="0" />
+    <frame x="0" y="22" width="1680" height="1028" extended-state="6" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16788767" sideWeight="0.5087463" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1929182" sideWeight="0.5181818" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22028424" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="238" y="-905" width="1269" height="751" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2960928" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="238" y="-905" width="1269" height="751" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279743" sideWeight="0.497558" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3215434" sideWeight="0.50801283" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43944266" sideWeight="0.5088141" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3741987" sideWeight="0.49125364" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21972133" sideWeight="0.49679488" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1929182" sideWeight="0.48114434" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42443728" sideWeight="0.4911859" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3215434" sideWeight="0.49198717" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3215434" sideWeight="0.49198717" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21778488" sideWeight="0.5060449" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2620,40 +2594,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279743" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16788767" sideWeight="0.5087463" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33821735" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21972133" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3215434" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" x="100" y="122" width="1480" height="828" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27323717" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="238" y="-905" width="1269" height="751" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281412" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3028846" sideWeight="0.49125364" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281412" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21778488" sideWeight="0.5060449" order="6" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -2661,275 +2601,99 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/services/UserService.java</url>
           <line>144</line>
           <properties />
           <option name="timeStamp" value="61" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/services/UserService.java</url>
           <line>175</line>
           <properties />
           <option name="timeStamp" value="63" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/domain/Monitor.java</url>
           <line>22</line>
           <properties />
           <option name="timeStamp" value="93" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/services/UserService.java</url>
           <line>139</line>
           <properties />
           <option name="timeStamp" value="99" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/fragments/monitors/ListAddMonitorsFragment.java</url>
           <line>113</line>
           <properties />
           <option name="timeStamp" value="123" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/fragments/monitors/ListAddMonitorsFragment.java</url>
           <line>283</line>
           <properties />
           <option name="timeStamp" value="124" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/fragments/monitors/ListAddMonitorsFragment.java</url>
           <line>293</line>
           <properties />
           <option name="timeStamp" value="128" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/utils/FirebaseUtils.java</url>
           <line>107</line>
           <properties />
           <option name="timeStamp" value="130" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/fragments/monitors/ListAddMonitorsFragment.java</url>
           <line>190</line>
           <properties />
           <option name="timeStamp" value="153" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/fragments/monitors/ListAddMonitorsFragment.java</url>
           <line>178</line>
           <properties />
           <option name="timeStamp" value="154" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/fragments/monitors/ListAddMonitorsFragment.java</url>
           <line>272</line>
           <properties />
           <option name="timeStamp" value="155" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/services/UserService.java</url>
           <line>170</line>
           <properties />
           <option name="timeStamp" value="175" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/services/UserService.java</url>
           <line>51</line>
           <properties />
           <option name="timeStamp" value="176" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/services/UserService.java</url>
           <line>76</line>
           <properties />
           <option name="timeStamp" value="177" />
         </line-breakpoint>
       </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
       <option name="time" value="261" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-27/android/os/Looper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="165" column="0" lean-forward="false" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/firebase-database-15.0.0.aar/7a538ac11a32bdc0b31b8bd1f106344d/jars/classes.jar!/com/google/firebase/database/zzb.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" column="36" lean-forward="false" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-27/java/util/HashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="903" column="18" lean-forward="false" selection-start-line="903" selection-start-column="18" selection-end-line="903" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_list_prof_monitoring.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="34" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_cardview_subject_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="12" column="39" lean-forward="false" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-          <folding>
-            <element signature="e#217#234#0" expanded="false" />
-            <element signature="e#417#435#0" expanded="false" />
-            <element signature="e#841#859#0" expanded="false" />
-            <element signature="e#892#910#0" expanded="false" />
-            <element signature="e#942#960#0" expanded="false" />
-            <element signature="e#1393#1411#0" expanded="false" />
-            <element signature="e#1444#1462#0" expanded="false" />
-            <element signature="e#1497#1515#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/firebase-database-15.0.0.aar/7a538ac11a32bdc0b31b8bd1f106344d/jars/classes.jar!/com/google/firebase/database/DataSnapshot.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="80" column="34" lean-forward="false" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-27/android/app/Fragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="2610" column="8" lean-forward="false" selection-start-line="2610" selection-start-column="8" selection-end-line="2610" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-27/android/view/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="6310" column="0" lean-forward="false" selection-start-line="6310" selection-start-column="0" selection-end-line="6310" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/adapters/ListMonitorsAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/adapters/ListMonitoringShortAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="21" column="71" lean-forward="false" selection-start-line="21" selection-start-column="65" selection-end-line="21" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_list_add_monitors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="21" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="28" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_cardview_single_title_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="38" lean-forward="false" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
-          <folding>
-            <element signature="e#419#437#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_cardview_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_cardview_layout_btn_x.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_cardview_monitoring_short_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="45" column="12" lean-forward="false" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/firebase-database-15.0.0.aar/7a538ac11a32bdc0b31b8bd1f106344d/jars/classes.jar!/com/google/android/gms/internal/firebase_database/zzfc.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="40" column="38" lean-forward="false" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/utils/SysUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="36" column="31" lean-forward="false" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/recyclerview-v7/27.1.1/ad225a74247e675db0b05ea4f8b17202acbb7f9d/recyclerview-v7-27.1.1-sources.jar!/android/support/v7/widget/RecyclerView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="1079" column="16" lean-forward="false" selection-start-line="1079" selection-start-column="16" selection-end-line="1079" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/adapters/ListSubjectShortAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="50" column="82" lean-forward="false" selection-start-line="50" selection-start-column="82" selection-end-line="50" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/utils/FirebaseUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="455">
@@ -2957,35 +2721,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="35" column="26" lean-forward="false" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/adapters/ListMonitoringAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="94" column="31" lean-forward="false" selection-start-line="94" selection-start-column="31" selection-end-line="94" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#3207#3429#0" expanded="false" />
-            <element signature="e#3428#3429#0" expanded="false" />
-            <element signature="e#3582#3583#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -2995,6 +2730,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_cardview_monitoring_layout.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="38" column="35" lean-forward="true" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
@@ -3006,17 +2744,6 @@
           </folding>
         </state>
       </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/setup/LoginActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="18" column="104" lean-forward="false" selection-start-line="18" selection-start-column="104" selection-end-line="18" selection-end-column="104" />
-          <folding />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/side_nav_bar.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -3026,155 +2753,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-394">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/activity_teacher_main_drawer.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/main_teacher.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_teacher_drawer.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/activity_teacher_main_drawer.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="android-manifest">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main_teacher.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="36" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="22" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/MainTeacherActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="49" column="48" lean-forward="false" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="48" />
-          <folding>
-            <element signature="e#1584#1615#0" expanded="false" />
-            <element signature="e#1617#1649#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="17" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="26" selection-end-column="17" />
-          <folding>
-            <element signature="e#326#366#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main_teacher.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="41" lean-forward="false" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
-          <folding>
-            <element signature="e#488#528#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="15" column="37" lean-forward="true" selection-start-line="15" selection-start-column="37" selection-end-line="20" selection-end-column="58" />
-          <folding>
-            <element signature="e#833#868#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/app_bar_main_teacher.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="50" lean-forward="true" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
-          <folding>
-            <element signature="e#873#908#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/domain/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-88">
-          <caret line="28" column="25" lean-forward="false" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/setup/SetupFirebaseActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="113" column="72" lean-forward="false" selection-start-line="113" selection-start-column="72" selection-end-line="113" selection-end-column="72" />
+        <state relative-caret-position="340">
+          <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -3183,7 +2769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
           <caret line="153" column="11" lean-forward="false" selection-start-line="153" selection-start-column="11" selection-end-line="153" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3191,17 +2776,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-115">
           <caret line="18" column="39" lean-forward="false" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/setup/SetupMainVincloActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="42" column="38" lean-forward="false" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3209,7 +2783,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="127" column="95" lean-forward="false" selection-start-line="127" selection-start-column="95" selection-end-line="127" selection-end-column="95" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3217,43 +2790,368 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="17" column="53" lean-forward="false" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_subject.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/subjects/SubjectActivity.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_camera.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_list_prof_monitoring.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-78">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/adapters/ListMonitoringAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="66" column="51" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_send.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="33" lean-forward="false" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/setup/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="18" column="104" lean-forward="false" selection-start-line="18" selection-start-column="104" selection-end-line="18" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/fragments/monitors/ListAddMonitorsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="56" column="26" lean-forward="true" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
+          <folding>
+            <marker date="1528310769987" expanded="true" signature="10919:11095" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_add_observation.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/bg_header.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="28" lean-forward="false" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/main_teacher.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/main.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="36" lean-forward="true" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+          <folding>
+            <element signature="e#381#421#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_setup_firebase.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_setup_user.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="20" column="23" lean-forward="false" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/domain/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="28" column="25" lean-forward="false" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/setup/SetupMainVincloActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/setup/SetupFirebaseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="631">
+          <caret line="113" column="63" lean-forward="false" selection-start-line="113" selection-start-column="63" selection-end-line="113" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_setup_main_vinclo.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="803">
+          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="36" lean-forward="false" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="15" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/drawables.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="1" column="32" lean-forward="false" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
+          <caret line="2" column="33" lean-forward="false" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+          <caret line="3" column="35" lean-forward="false" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+          <caret line="4" column="32" lean-forward="false" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+          <caret line="5" column="31" lean-forward="false" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+          <caret line="6" column="30" lean-forward="false" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_teacher_drawer.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="18" lean-forward="false" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header_main_teacher.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="33" lean-forward="false" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main_teacher.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="54" lean-forward="false" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/app_bar_main_teacher.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="19" column="44" lean-forward="false" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="55" column="49" lean-forward="false" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="122" column="9" lean-forward="false" selection-start-line="122" selection-start-column="9" selection-end-line="122" selection-end-column="9" />
-          <folding>
-            <element signature="e#1657#1688#0" expanded="true" />
-            <element signature="e#1690#1722#0" expanded="true" />
-            <element signature="e#2295#2506#0" expanded="true" />
-            <element signature="e#2505#2506#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="281">
+          <caret line="27" column="41" lean-forward="false" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="51">
+          <caret line="3" column="33" lean-forward="false" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="33" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
       <provider editor-type-id="android-designer2">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="16" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main_teacher.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="63" column="50" lean-forward="false" selection-start-line="63" selection-start-column="50" selection-end-line="63" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="553">
+          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding>
+            <element signature="e#2042#2247#0" expanded="true" />
+            <element signature="e#2246#2247#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/totabraz/com/monitoriasufrn/activities/MainTeacherActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="39" column="27" lean-forward="false" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
+          <folding>
+            <element signature="e#2222#2377#0" expanded="true" />
+            <element signature="e#2376#2377#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

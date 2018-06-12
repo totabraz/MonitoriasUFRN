@@ -5,6 +5,7 @@
     android:id="@+id/drawer_layout_teacher"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_background"
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
@@ -14,12 +15,71 @@
         android:layout_height="match_parent" />
 
     <android.support.design.widget.NavigationView
-        android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_main_teacher"
-        app:menu="@menu/activity_main_teacher_drawer" />
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="100dp"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:paddingBottom="8dp">
+
+
+            <android.support.design.widget.NavigationView
+                android:id="@+id/nav_view_teacher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:elevation="0dp"
+                android:fitsSystemWindows="true"
+                android:paddingBottom="@dimen/space_xxs"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:paddingTop="0dp"
+                app:headerLayout="@layout/nav_header_main_teacher"
+                app:menu="@menu/activity_main_teacher_drawer" />
+
+
+            <android.support.design.widget.NavigationView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:elevation="0dp"
+                android:paddingBottom="@dimen/space_xxs"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:paddingTop="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom">
+
+                    <Button
+                        android:id="@+id/btnLogoff"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/button_background"
+                        android:elevation="0dp"
+                        android:text="@string/logoff"
+                        android:textAlignment="center"
+                        android:textColor="@drawable/button_txt_color"
+                        android:theme="@style/buttons" />
+
+                </RelativeLayout>
+
+            </android.support.design.widget.NavigationView>
+
+        </LinearLayout>
+
+    </android.support.design.widget.NavigationView>
 
 </android.support.v4.widget.DrawerLayout>

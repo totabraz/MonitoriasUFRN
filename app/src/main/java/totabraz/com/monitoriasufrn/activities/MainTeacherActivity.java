@@ -15,11 +15,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 
 import totabraz.com.monitoriasufrn.R;
 import totabraz.com.monitoriasufrn.fragments.monitoring.ListProfMonitoringFragment;
 import totabraz.com.monitoriasufrn.fragments.monitoring.ListTurmasFragment;
-import totabraz.com.monitoriasufrn.fragments.monitors.ListAddMonitorsFragment;
 import totabraz.com.monitoriasufrn.fragments.observations.AddObservationFragment;
 import totabraz.com.monitoriasufrn.fragments.subject.ListSubjectsFragment;
 
@@ -30,17 +30,16 @@ public class MainTeacherActivity extends AppCompatActivity
     private Toolbar toolbar;
     private Fragment fragment;
     private FragmentTransaction ft;
-
+    private Button btnLogoff;
 
     private void drawerPreset() {
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout_teacher);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view_teacher);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
@@ -48,10 +47,17 @@ public class MainTeacherActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_teacher);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         this.drawerPreset();
+        btnLogoff = findViewById(R.id.btnLogoff);
+        btnLogoff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO:  logo JAPI and
+            }
+        });
 
         toolbarSearchInput = findViewById(R.id.toolbarSearchInput);
         fragment = ListTurmasFragment.newInstance();
@@ -63,7 +69,7 @@ public class MainTeacherActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout_teacher);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -74,10 +80,9 @@ public class MainTeacherActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.main_teacher, menu);
         return true;
     }
-
 
 
     @Override
@@ -91,7 +96,7 @@ public class MainTeacherActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_search) {
-            if (toolbarSearchInput.getVisibility()== View.VISIBLE){
+            if (toolbarSearchInput.getVisibility() == View.VISIBLE) {
                 toolbarSearchInput.setVisibility(View.GONE);
                 toolbarSearchInput.startAnimation(animScaleOpen);
             } else {
@@ -106,8 +111,6 @@ public class MainTeacherActivity extends AppCompatActivity
     }
 
 
-
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -119,7 +122,7 @@ public class MainTeacherActivity extends AppCompatActivity
         } else if (id == R.id.nav_favourites) {
 
         } else if (id == R.id.nav_my_monitors) {
-            fragment = ListAddMonitorsFragment.newInstance();
+
         } else if (id == R.id.nav_my_subjects) {
             fragment = ListSubjectsFragment.newInstance();
         } else if (id == R.id.nav_my_observations) {
@@ -131,7 +134,7 @@ public class MainTeacherActivity extends AppCompatActivity
             ft.addToBackStack(null);
             ft.commit();
         }
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_teacher);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

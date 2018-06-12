@@ -35,7 +35,11 @@
                 android:layout_margin="0dp"
                 android:layout_weight="1"
                 android:elevation="0dp"
-                android:padding="0dp"
+                android:fitsSystemWindows="true"
+                android:paddingBottom="@dimen/space_xxs"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:paddingTop="0dp"
                 app:headerLayout="@layout/nav_header_main"
                 app:menu="@menu/activity_main_drawer" />
 
@@ -45,7 +49,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0dp"
                 android:elevation="0dp"
-                android:padding="0dp">
+                android:paddingBottom="@dimen/space_xxs"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:paddingTop="0dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"

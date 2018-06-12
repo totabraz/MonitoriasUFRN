@@ -4,8 +4,8 @@ import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TextInputEditText;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -19,11 +19,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 import totabraz.com.monitoriasufrn.R;
-import totabraz.com.monitoriasufrn.fragments.monitoring.ListProfMonitoringFragment;
+import totabraz.com.monitoriasufrn.activities.setup.LoginActivity;
 import totabraz.com.monitoriasufrn.fragments.monitoring.ListTurmasFragment;
-import totabraz.com.monitoriasufrn.fragments.monitors.ListAddMonitorsFragment;
-import totabraz.com.monitoriasufrn.fragments.observations.AddObservationFragment;
-import totabraz.com.monitoriasufrn.fragments.subject.ListSubjectsFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -35,7 +32,6 @@ public class MainActivity extends AppCompatActivity
     private Button btnLogin;
 
     private void drawerPreset(){
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -45,6 +41,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,9 +54,10 @@ public class MainActivity extends AppCompatActivity
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), MainTeacherActivity.class));
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
             }
         });
+
         toolbarSearchInput = findViewById(R.id.toolbarSearchInput);
         fragment = ListTurmasFragment.newInstance();
         ft = getFragmentManager().beginTransaction();
@@ -117,7 +115,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_monitorias) {
-            fragment = ListProfMonitoringFragment.newInstance();
+            fragment = ListTurmasFragment.newInstance();
         } else  if (id == R.id.nav_favourites) {
 
         }
