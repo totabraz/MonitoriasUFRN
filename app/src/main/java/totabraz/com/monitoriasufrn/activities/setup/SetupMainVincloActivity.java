@@ -41,7 +41,6 @@ public class SetupMainVincloActivity extends AppCompatActivity {
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         rvMyList.setLayoutManager(mLayoutManager);
         rvMyList.setAdapter(new ListVinculosAdapter(this, vinculos));
-
         progress.setVisibility(View.GONE);
         rvMyList.setVisibility(View.VISIBLE);
 

@@ -2,6 +2,7 @@ package totabraz.com.monitoriasufrn.activities;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TextInputEditText;
@@ -17,50 +18,54 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
-import totabraz.com.monitoriasufrn.R;
-import totabraz.com.monitoriasufrn.fragments.monitoring.ListProfMonitoringFragment;
-import totabraz.com.monitoriasufrn.fragments.monitoring.ListTurmasFragment;
-import totabraz.com.monitoriasufrn.fragments.observations.AddObservationFragment;
-import totabraz.com.monitoriasufrn.fragments.subject.ListSubjectsFragment;
+import com.google.firebase.auth.FirebaseAuth;
 
-public class MainTeacherActivity extends AppCompatActivity
+import totabraz.com.monitoriasufrn.R;
+import totabraz.com.monitoriasufrn.activities.addmonitoring.AddMonitoringActivity;
+import totabraz.com.monitoriasufrn.dao.UserDao;
+import totabraz.com.monitoriasufrn.fragments.monitoring.prof.ListProfTurmasFragment;
+
+
+public class MainProfActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private TextInputEditText toolbarSearchInput;
     private Toolbar toolbar;
     private Fragment fragment;
     private FragmentTransaction ft;
-    private Button btnLogoff;
 
     private void drawerPreset() {
-        DrawerLayout drawer = findViewById(R.id.drawer_layout_teacher);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout_prof);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = findViewById(R.id.nav_view_teacher);
+        NavigationView navigationView = findViewById(R.id.nav_view_prof);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_teacher);
+        setContentView(R.layout.activity_main_prof);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         this.drawerPreset();
-        btnLogoff = findViewById(R.id.btnLogoff);
+        Button btnLogoff = findViewById(R.id.btnLogoff);
         btnLogoff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO:  logo JAPI and
+                UserDao.deleteLocalUser(getApplicationContext());
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
             }
         });
 
         toolbarSearchInput = findViewById(R.id.toolbarSearchInput);
-        fragment = ListTurmasFragment.newInstance();
+        fragment = ListProfTurmasFragment.newInstance();
         ft = getFragmentManager().beginTransaction();
         ft.replace(R.id.rlFragmentsArea, fragment);
         ft.addToBackStack(null);
@@ -69,7 +74,7 @@ public class MainTeacherActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = findViewById(R.id.drawer_layout_teacher);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout_prof);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -117,16 +122,10 @@ public class MainTeacherActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_monitorias) {
-            fragment = ListProfMonitoringFragment.newInstance();
-        } else if (id == R.id.nav_favourites) {
-
-        } else if (id == R.id.nav_my_monitors) {
-
-        } else if (id == R.id.nav_my_subjects) {
-            fragment = ListSubjectsFragment.newInstance();
-        } else if (id == R.id.nav_my_observations) {
-            fragment = AddObservationFragment.newInstance();
+        if (id == R.id.nav_my_monitoring) {
+            fragment = ListProfTurmasFragment.newInstance();
+        } else if (id == R.id.nav_add_monitoring) {
+            startActivity(new Intent(getApplicationContext(), AddMonitoringActivity.class));
         }
         if (fragment != null) {
             ft = getFragmentManager().beginTransaction();
@@ -134,7 +133,7 @@ public class MainTeacherActivity extends AppCompatActivity
             ft.addToBackStack(null);
             ft.commit();
         }
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_teacher);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_prof);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

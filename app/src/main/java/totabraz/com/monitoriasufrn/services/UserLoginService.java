@@ -88,6 +88,7 @@ public class UserLoginService {
         return null;
     }
 
+
     private ObjectMapper getObjectMapperInstance() {
         if (objectMapper == null) {
             objectMapper = new ObjectMapper();
@@ -95,7 +96,6 @@ public class UserLoginService {
         }
         return objectMapper;
     }
-
     /**
      * ::: Task GetUser :::
      * Get infos from user from refreshToken

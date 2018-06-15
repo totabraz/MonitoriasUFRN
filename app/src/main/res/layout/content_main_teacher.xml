@@ -7,7 +7,7 @@
     android:elevation="4dp"
     android:padding="16dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".activities.MainTeacherActivity"
+    tools:context=".activities.MainProfActivity"
     tools:showIn="@layout/app_bar_main_teacher">
 
     <RelativeLayout

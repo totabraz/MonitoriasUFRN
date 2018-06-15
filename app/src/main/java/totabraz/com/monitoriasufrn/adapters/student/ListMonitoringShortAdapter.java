@@ -1,4 +1,4 @@
-package totabraz.com.monitoriasufrn.adapters;
+package totabraz.com.monitoriasufrn.adapters.student;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

@@ -1,9 +1,7 @@
-package totabraz.com.monitoriasufrn.adapters;
+package totabraz.com.monitoriasufrn.adapters.professor;
 
 import android.app.Activity;
 import android.app.FragmentTransaction;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -16,17 +14,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import totabraz.com.monitoriasufrn.R;
-import totabraz.com.monitoriasufrn.fragments.monitoring.ListProfMonitoringFragment;
+import totabraz.com.monitoriasufrn.fragments.monitoring.prof.ListProfMonitoringFragment;
 import totabraz.com.monitoriasufrn.utils.SysUtils;
 
-public class ListSubjectShortAdapter extends RecyclerView.Adapter<ListSubjectShortAdapter.Holder> {
+public class ListProfSubjectShortAdapter extends RecyclerView.Adapter<ListProfSubjectShortAdapter.Holder> {
     private Activity mActivity;
     private ArrayList<String> keys;
     private HashMap<String, String> components;
 
     private View rootView;
 
-    public ListSubjectShortAdapter(Activity activity, HashMap<String, String> components) {
+    public ListProfSubjectShortAdapter(Activity activity, HashMap<String, String> components) {
         this.keys = new ArrayList<String >(components.keySet());
         this.components = components;
         this.mActivity = activity;

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.monitoring.student.ListTurmasFragment">
+    tools:context=".fragments.monitoring.prof.ListProfMonitoringFragment">
 
     <TextView
         android:id="@+id/tvNothingToShow"
@@ -17,7 +17,9 @@
         android:id="@+id/rvMyList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone" />
+        android:visibility="gone"
+        android:layout_marginBottom="@dimen/space_xxs"
+        android:layout_above="@id/btnAdd" />
 
     <RelativeLayout
         android:id="@+id/progressbarArea"
@@ -33,5 +35,18 @@
             android:layout_centerVertical="true" />
 
     </RelativeLayout>
+
+    <Button
+
+        android:id="@+id/btnAdd"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_background"
+        android:text="Cadastrar"
+        android:visibility="gone"
+        android:textColor="@drawable/button_txt_color" />
+
 
 </RelativeLayout>

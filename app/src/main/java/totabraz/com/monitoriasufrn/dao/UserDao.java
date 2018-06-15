@@ -17,6 +17,10 @@ public abstract class UserDao {
     private static final String USER_MONITOR_ROOT = "user_monitor_local";
     private static final String USER_TURMAS_ROOT = "turmas_local";
 
+    public static void deleteLocalUser(Context context) {
+        Paper.init(context);
+        Paper.book().delete(USER_LOCAL_ROOT);
+    }
 
     public static void setLocalUser(Context context, User user) {
         Paper.init(context);

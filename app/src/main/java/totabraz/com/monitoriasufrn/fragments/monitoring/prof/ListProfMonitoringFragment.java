@@ -1,4 +1,4 @@
-package totabraz.com.monitoriasufrn.fragments.monitoring;
+package totabraz.com.monitoriasufrn.fragments.monitoring.prof;
 
 
 import android.content.Context;
@@ -25,14 +25,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import totabraz.com.monitoriasufrn.R;
-import totabraz.com.monitoriasufrn.activities.monitoring.AddMonitoringActivity;
-import totabraz.com.monitoriasufrn.adapters.ListMonitoringAdapter;
-import totabraz.com.monitoriasufrn.adapters.ListMonitoringShortAdapter;
+import totabraz.com.monitoriasufrn.activities.addmonitoring.AddMonitoringActivity;
+import totabraz.com.monitoriasufrn.adapters.professor.ListProfMonitoringAdapter;
 import totabraz.com.monitoriasufrn.dao.UserDao;
-import totabraz.com.monitoriasufrn.domain.Monitor;
 import totabraz.com.monitoriasufrn.domain.Monitoring;
 import totabraz.com.monitoriasufrn.enums.TipoVinculoEnum;
 import totabraz.com.monitoriasufrn.utils.FirebaseUtils;
@@ -47,7 +44,7 @@ public class ListProfMonitoringFragment extends Fragment {
     private ArrayList<Object> monitorings;
     private String lastCpf;
     private ObjectMapper objectMapper;
-    private ListMonitoringAdapter mAdapter;
+    private ListProfMonitoringAdapter mAdapter;
     private String siape;
     private Context mContext;
 
@@ -74,7 +71,7 @@ public class ListProfMonitoringFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        rootView = inflater.inflate(R.layout.fragment_list_prof_monitoring, container, false);
+        rootView = inflater.inflate(R.layout.fragment_prof_list_monitoring, container, false);
         monitorings = null;
         componentToShow = null;
         mContext = getActivity().getApplicationContext();
@@ -142,7 +139,7 @@ public class ListProfMonitoringFragment extends Fragment {
 
                 if (monitorings != null && monitorings.size() > 0) {
                     RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(mContext);
-                    mAdapter = new ListMonitoringAdapter(mContext, monitorings);
+                    mAdapter = new ListProfMonitoringAdapter(mContext, monitorings);
                     rvMyList.setLayoutManager(mLayoutManager);
                     rvMyList.setItemAnimator(new DefaultItemAnimator());
                     rvMyList.setAdapter(mAdapter);

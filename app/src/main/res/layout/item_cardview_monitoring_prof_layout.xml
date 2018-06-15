@@ -35,8 +35,9 @@
                 android:id="@+id/ivBtn"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/ic_alert"
-                android:backgroundTint="@color/textWhiteDark" />
+                android:layout_margin="@dimen/space_xxs"
+                android:background="@drawable/ic_delete_black"
+                android:backgroundTint="@color/textWhiteLight" />
         </LinearLayout>
 
         <View

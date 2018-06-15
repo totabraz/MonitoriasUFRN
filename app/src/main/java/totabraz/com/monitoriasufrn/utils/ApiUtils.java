@@ -24,10 +24,11 @@ public abstract class ApiUtils {
     public static final String QUERY_AND_CODIGO_COMPONENTE = "&codigo-componente=";
     public static final String QUERY_AND_IDENTIFICADOR = "&identificador=";
     public static final String QUERY_AND_CPF = "&cpf-cnpj=";
+    public static final String QUERY_AND_VINCULO_DOCENTE = "&id-tipo-vinculo=2";
 
     public static final String CONSULTA_SERVIDORES = URLBASE_TEST + "pessoa/v0.1/servidores";
     public static final String CONSULTA_TURMAS = URLBASE_TEST + "turma/v0.1/turmas?" + QUERY_LIMIT;
-    public static final String CONSULTA_VINCULOS = URLBASE_TEST + "vinculo/v0.1/vinculos?" + QUERY_LIMIT + QUERY_AND_ATIVO;
+    public static final String CONSULTA_VINCULOS = URLBASE_TEST + "vinculo/v0.1/vinculos?" + QUERY_LIMIT + QUERY_AND_ATIVO + QUERY_AND_VINCULO_DOCENTE ;
     public static final String CONSULTA_USER_INFO = URLBASE_TEST + "usuario/v0.1/usuarios/info";
     public static final String CONSULTA_USER = URLBASE_TEST + "usuario/v0.1/usuarios?"  + QUERY_LIMIT + QUERY_AND_ATIVO;
 

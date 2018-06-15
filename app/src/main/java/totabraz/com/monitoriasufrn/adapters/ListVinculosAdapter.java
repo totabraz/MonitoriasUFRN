@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import totabraz.com.monitoriasufrn.R;
-import totabraz.com.monitoriasufrn.activities.MainTeacherActivity;
+import totabraz.com.monitoriasufrn.activities.MainProfActivity;
 import totabraz.com.monitoriasufrn.dao.UserDao;
 import totabraz.com.monitoriasufrn.domain.Vinculo;
 
@@ -42,7 +42,7 @@ public class ListVinculosAdapter extends RecyclerView.Adapter<ListVinculosAdapte
             @Override
             public void onClick(View v) {
                 UserDao.setVinculoDefault(activity, vinculo);
-                activity.startActivity(new Intent(activity.getApplicationContext(), MainTeacherActivity.class));
+                activity.startActivity(new Intent(activity.getApplicationContext(), MainProfActivity.class));
                 activity.finish();
             }
         });

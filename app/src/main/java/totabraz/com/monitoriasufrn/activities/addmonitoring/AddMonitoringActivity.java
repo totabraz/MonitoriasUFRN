@@ -1,4 +1,4 @@
-package totabraz.com.monitoriasufrn.activities.monitoring;
+package totabraz.com.monitoriasufrn.activities.addmonitoring;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,9 +27,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 import totabraz.com.monitoriasufrn.R;
@@ -69,30 +66,28 @@ public class AddMonitoringActivity extends AppCompatActivity {
     private TextView tvNomeTurma;
     private ImageView ivAddMonitor;
     private ImageView ivAddTurma;
-    private CheckBox horarioM1, horarioM2, horarioM3, horarioM4, horarioM5, horarioM6, horarioT1, horarioT2, horarioT3, horarioT4, horarioT5, horarioT6, horarioN1, horarioN2, horarioN3, horarioN4;
+    private CheckBox horarioM1, horarioM2, horarioM3, horarioM4, horarioM5,
+            horarioM6, horarioT1, horarioT2, horarioT3, horarioT4, horarioT5,
+            horarioT6, horarioN1, horarioN2, horarioN3, horarioN4;
     private Button btnAdd;
     private RadioGroup rgDayOfWeek;
-    private ProgressBar progress;
+    private ProgressBar progressAdd;
+    private ProgressBar progressMonitor;
+    private ProgressBar progressTurmas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_monitoring);
-        lastCodigoComponent = "";
-        lastCpf = "";
-        dia = "";
-        turnoM = "";
-        turnoT = "";
-        turnoN = "";
-
         Date date = new Date();
-        Calendar calendar = new GregorianCalendar();
-        calendar.setTime(date);
-        year = String.valueOf(calendar.get(Calendar.YEAR));
-
-        idVinculo = UserDao.getVinculoDefault(getApplicationContext()).getIdVinculo();
+//        Calendar calendar = new GregorianCalendar();
+//        calendar.setTime(date);
+//        year = String.valueOf(calendar.get(Calendar.YEAR));
         getSupportActionBar().hide();//Ocultar ActivityBar anterior
+        idVinculo = UserDao.getVinculoDefault(getApplicationContext()).getIdVinculo();
         setupViews();
+        cleanForm();
+
     }
 
     private void setupViews() {
@@ -100,7 +95,9 @@ public class AddMonitoringActivity extends AppCompatActivity {
         tvNomeMonitor = findViewById(R.id.tvNomeMonitor);
         ivAddTurma = findViewById(R.id.ivAddTurma);
         tvNomeTurma = findViewById(R.id.tvNomeTurma);
-        progress = findViewById(R.id.progress);
+        progressAdd = findViewById(R.id.progressAdd);
+        progressMonitor = findViewById(R.id.progressMonitor);
+        progressTurmas = findViewById(R.id.progressTurmas);
         tiSetor = findViewById(R.id.tiSetor);
         tiSala = findViewById(R.id.tiSala);
         tiCpfMonitor = findViewById(R.id.tiCpfMonitor);
@@ -124,7 +121,9 @@ public class AddMonitoringActivity extends AppCompatActivity {
         horarioN4 = findViewById(R.id.horarioN4);
         btnAdd = findViewById(R.id.btnAdd);
         rgDayOfWeek = findViewById(R.id.rgDayOfWeek);
-
+        progressAdd.setVisibility(View.GONE);
+        progressMonitor.setVisibility(View.GONE);
+        progressTurmas.setVisibility(View.GONE);
         setupOnClicks();
     }
 
@@ -134,6 +133,8 @@ public class AddMonitoringActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (checkFormInput()) {
                     addMonitoring();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Ops! Faltou preencher algo.. :(", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -214,7 +215,6 @@ public class AddMonitoringActivity extends AppCompatActivity {
 
     private boolean checkFormInput() {
         boolean checked = false;
-//        RadioButton checkedRadioButton = rgDayOfWeek.findViewById(rgDayOfWeek.getCheckedRadioButtonId());
         int radioButtonIn = rgDayOfWeek.getCheckedRadioButtonId();
         View rb = rgDayOfWeek.findViewById(radioButtonIn);
         int indexOfDay = rgDayOfWeek.indexOfChild(rb);
@@ -230,12 +230,40 @@ public class AddMonitoringActivity extends AppCompatActivity {
         return checked;
     }
 
-    private void addMonitoring(){
-        FirebaseUtils.addMonitoring(getApplicationContext(),setupMonitoria());
+    private void addMonitoring() {
+        FirebaseUtils.addMonitoring(getApplicationContext(), getFormInputMonitoria());
+        cleanForm();
+        Toast.makeText(getApplicationContext(), "Monitoria adicionada", Toast.LENGTH_SHORT).show();
+    }
+
+    private void cleanForm() {
+        tiCodComponent.setText("");
+        tiCpfMonitor.setText("");
+        tiObservation.setText("");
+        tiSala.setText("");
+        tiSetor.setText("");
+        rgDayOfWeek.clearCheck();
+        horarioM1.setChecked(false);
+        horarioM2.setChecked(false);
+        horarioM3.setChecked(false);
+        horarioM4.setChecked(false);
+        horarioM5.setChecked(false);
+        horarioM6.setChecked(false);
+        horarioT1.setChecked(false);
+        horarioT2.setChecked(false);
+        horarioT3.setChecked(false);
+        horarioT4.setChecked(false);
+        horarioT5.setChecked(false);
+        horarioT6.setChecked(false);
+        horarioN1.setChecked(false);
+        horarioN2.setChecked(false);
+        horarioN3.setChecked(false);
+        horarioN4.setChecked(false);
+
 
     }
 
-    private Monitoring setupMonitoria() {
+    private Monitoring getFormInputMonitoria() {
         Monitoring monitoring = new Monitoring();
         monitoring.setSetor(setor);
         monitoring.setSala(sala);
@@ -243,13 +271,12 @@ public class AddMonitoringActivity extends AppCompatActivity {
         monitoring.setHorarioT(turnoT);
         monitoring.setHorarioN(turnoN);
         monitoring.setMonitor(user);
-
         monitoring.setDia(dia);
         monitoring.setCodigoComponente(turma.getCodigoComponente());
         monitoring.setNomeComponente(turma.getNomeComponente());
         monitoring.setSiglaComponente(turma.getSiglaNivel());
         monitoring.setObservacao(tiObservation.getText().toString());
-        return  monitoring;
+        return monitoring;
     }
 
     /**
@@ -341,7 +368,8 @@ public class AddMonitoringActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            progress.setVisibility(View.VISIBLE);
+            ivAddMonitor.setVisibility(View.GONE);
+            progressMonitor.setVisibility(View.VISIBLE);
         }
 
         @Override
@@ -360,7 +388,8 @@ public class AddMonitoringActivity extends AppCompatActivity {
                 user = result;
                 setupMonitorName(result);
             } else showMsgError();
-            progress.setVisibility(View.GONE);
+            ivAddMonitor.setVisibility(View.VISIBLE);
+            progressMonitor.setVisibility(View.GONE);
         }
     }
 
@@ -370,7 +399,8 @@ public class AddMonitoringActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            progress.setVisibility(View.VISIBLE);
+            ivAddTurma.setVisibility(View.GONE);
+            progressTurmas.setVisibility(View.VISIBLE);
         }
 
         @Override
@@ -387,28 +417,8 @@ public class AddMonitoringActivity extends AppCompatActivity {
                 turma = result;
                 setupTurmaName(result);
             } else showMsgError();
-            progress.setVisibility(View.GONE);
+            progressTurmas.setVisibility(View.GONE);
+            ivAddTurma.setVisibility(View.VISIBLE);
         }
     }
-
 }
-
-
-//                monitors.put(result.getCpfCnpj(), result);
-//                DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(FirebaseUtils.getChildProfMonitors(mContext));
-//                mDatabase.setValue(monitors);
-/**
- * TESTARRRRRRRRRRRRR
- * TESTARRRRRRRRRRRRR
- * TESTARRRRRRRRRRRRR
- * TESTARRRRRRRRRRRRR
- */
-
-
-//                FirebaseUtils.addMonitoring(getApplicationContext(), result);
-//                Toast.makeText(getActivity().getApplicationContext(), subject.getNomeComponente(),Toast.LENGTH_SHORT).show();
-//                monitoring.setDia();
-//                FirebaseUtils.addMonitoring();
-//                updateMonitors(mContext, lastCpf, monitors);
-//                updateListMonitors();
-//                tiMatricula.setText("");

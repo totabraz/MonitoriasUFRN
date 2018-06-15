@@ -1,4 +1,4 @@
-package totabraz.com.monitoriasufrn.adapters;
+package totabraz.com.monitoriasufrn.adapters.professor;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -15,20 +15,20 @@ import totabraz.com.monitoriasufrn.R;
 import totabraz.com.monitoriasufrn.domain.Monitoring;
 import totabraz.com.monitoriasufrn.utils.SysUtils;
 
-public class ListMonitoringAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class ListProfMonitoringAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private ArrayList<Object> monitorings;
     private Context mContext;
     private String cpfMonitor;
     private View rootView;
 
-    public ListMonitoringAdapter(Context context, ArrayList<Object> monitorings) {
+    public ListProfMonitoringAdapter(Context context, ArrayList<Object> monitorings) {
         this.monitorings = monitorings;
         this.mContext = context;
         this.cpfMonitor = null;
     }
 
-    public ListMonitoringAdapter(Context context, ArrayList<Object> monitorings, String cpfMonitor) {
+    public ListProfMonitoringAdapter(Context context, ArrayList<Object> monitorings, String cpfMonitor) {
         this.monitorings = monitorings;
         this.mContext = context;
         this.cpfMonitor = cpfMonitor;
@@ -46,7 +46,6 @@ public class ListMonitoringAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         return viewType;
     }
 
-
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -54,7 +53,7 @@ public class ListMonitoringAdapter extends RecyclerView.Adapter<RecyclerView.Vie
             rootView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cardview_single_title_layout, null);
             return new HolderTitle(rootView);
         } else {
-            rootView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cardview_monitoring_layout, null);
+            rootView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cardview_monitoring_prof_layout, null);
             return new HolderMonitoring(rootView);
         }
     }
@@ -76,23 +75,18 @@ public class ListMonitoringAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                 holderMonitoring.tvClass.setText(monitoring.getSala());
                 holderMonitoring.tvMonitor.setText(monitoring.getMonitor().getNomePessoa());
                 holderMonitoring.tvTime.setText(monitoring.getClassTime());
-                if (monitoring.getObservacao().equals("")){
-                    holderMonitoring.ivBtn.setVisibility(View.GONE);
-                } else {
-                    holderMonitoring.ivBtn.setVisibility(View.VISIBLE);
-                }
                 if (cpfMonitor != null) {
                     holderMonitoring.ivBtn.setVisibility(View.VISIBLE);
                     holderMonitoring.ivBtn.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             monitorings.remove(position);
+
                         }
                     });
                 }
                 break;
         }
-
 
     }
 
@@ -109,7 +103,6 @@ public class ListMonitoringAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         private TextView tvTime;
         private ImageView ivBtn;
 
-
         public HolderMonitoring(View itemView) {
             super(itemView);
             tvTurma = itemView.findViewById(R.id.tvTurma);
@@ -120,7 +113,6 @@ public class ListMonitoringAdapter extends RecyclerView.Adapter<RecyclerView.Vie
             ivBtn = itemView.findViewById(R.id.ivBtn);
         }
     }
-
 
     class HolderTitle extends RecyclerView.ViewHolder {
         private TextView tvTitle;

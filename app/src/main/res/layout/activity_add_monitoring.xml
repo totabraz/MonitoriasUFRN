@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activities.monitoring.AddMonitoringActivity">
+    tools:context=".activities.addmonitoring.AddMonitoringActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -29,20 +29,6 @@
         android:layout_margin="@dimen/space_xs"
         android:background="@drawable/bg_area"
         android:elevation="4dp">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@id/btnAdd">
-
-            <ProgressBar
-                android:id="@+id/progress"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:visibility="gone" />
-        </RelativeLayout>
 
         <ScrollView
             android:layout_width="match_parent"
@@ -106,6 +92,12 @@
                                 android:text="08484668452" />
                         </android.support.design.widget.TextInputLayout>
 
+                        <ProgressBar
+                            android:id="@+id/progressMonitor"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="4dp" />
 
                         <ImageView
                             android:id="@+id/ivAddMonitor"
@@ -121,12 +113,12 @@
 
                     <TextView
                         android:id="@+id/tvNomeMonitor"
-                        android:layout_marginBottom="@dimen/space_xxs"
                         style="@style/text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/space_xxs"
                         android:text=""
-                        android:visibility="gone"/>
+                        android:visibility="gone" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -157,6 +149,13 @@
                                 android:text="IMD0018" />
                         </android.support.design.widget.TextInputLayout>
 
+                        <ProgressBar
+                            android:id="@+id/progressTurmas"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="4dp" />
+
                         <ImageView
                             android:id="@+id/ivAddTurma"
                             android:layout_width="35dp"
@@ -171,12 +170,12 @@
 
                     <TextView
                         android:id="@+id/tvNomeTurma"
-                        android:layout_marginBottom="@dimen/space_xxs"
                         style="@style/text"
                         android:layout_width="match_parent"
-                        android:visibility="gone"
                         android:layout_height="wrap_content"
-                        android:text="" />
+                        android:layout_marginBottom="@dimen/space_xxs"
+                        android:text=""
+                        android:visibility="gone" />
                 </LinearLayout>
 
                 <android.support.design.widget.TextInputLayout
@@ -479,8 +478,8 @@
                         android:gravity="top"
                         android:hint="Caso exista alguma obeservação"
                         android:inputType="textMultiLine"
-                        android:maxLength="240"
                         android:lines="4"
+                        android:maxLength="240"
                         android:maxLines="4"
                         android:text="" />
                 </android.support.design.widget.TextInputLayout>
@@ -488,7 +487,14 @@
 
             </LinearLayout>
         </ScrollView>
-
+        <ProgressBar
+            android:id="@+id/progressAdd"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_margin="4dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"/>
         <Button
             android:id="@+id/btnAdd"
             android:layout_width="250dp"

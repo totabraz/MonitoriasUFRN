@@ -20,7 +20,8 @@ import android.widget.Button;
 
 import totabraz.com.monitoriasufrn.R;
 import totabraz.com.monitoriasufrn.activities.setup.LoginActivity;
-import totabraz.com.monitoriasufrn.fragments.monitoring.ListTurmasFragment;
+import totabraz.com.monitoriasufrn.dao.UserDao;
+import totabraz.com.monitoriasufrn.fragments.monitoring.student.ListTurmasFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -29,9 +30,14 @@ public class MainActivity extends AppCompatActivity
     private Toolbar toolbar;
     private Fragment fragment;
     private FragmentTransaction ft;
-    private Button btnLogin;
 
-    private void drawerPreset(){
+    private void initSetup() {
+        if (UserDao.getLocalUser(getApplicationContext()) != null) {
+            loginActivity();
+        }
+    }
+
+    private void drawerPreset() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -46,15 +52,15 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        toolbar= findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        initSetup();
         this.drawerPreset();
-        btnLogin = findViewById(R.id.btnLogin);
+        Button btnLogin = findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                loginActivity();
             }
         });
 
@@ -64,6 +70,10 @@ public class MainActivity extends AppCompatActivity
         ft.replace(R.id.rlFragmentsArea, fragment);
         ft.addToBackStack(null);
         ft.commit();
+    }
+
+    private void loginActivity() {
+        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
     }
 
     @Override
@@ -94,7 +104,7 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_search) {
-            if (toolbarSearchInput.getVisibility()==View.VISIBLE){
+            if (toolbarSearchInput.getVisibility() == View.VISIBLE) {
                 toolbarSearchInput.setVisibility(View.GONE);
                 toolbarSearchInput.startAnimation(animScaleOpen);
             } else {
@@ -116,10 +126,10 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_monitorias) {
             fragment = ListTurmasFragment.newInstance();
-        } else  if (id == R.id.nav_favourites) {
+        } else if (id == R.id.nav_favourites) {
 
         }
-        if (fragment!= null){
+        if (fragment != null) {
             ft = getFragmentManager().beginTransaction();
             ft.replace(R.id.rlFragmentsArea, fragment);
             ft.addToBackStack(null);

@@ -30,9 +30,9 @@
         <activity android:name=".activities.setup.SetupFirebaseActivity" />
         <activity android:name=".activities.error.ErrorMsgActivity" />
         <activity android:name=".activities.setup.SetupMainVincloActivity" />
-        <activity android:name=".activities.monitoring.AddMonitoringActivity"></activity>
+        <activity android:name=".activities.addmonitoring.AddMonitoringActivity"></activity>
         <activity
-            android:name=".activities.MainTeacherActivity"
+            android:name=".activities.MainProfActivity"
             android:label="@string/title_activity_main_teacher"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

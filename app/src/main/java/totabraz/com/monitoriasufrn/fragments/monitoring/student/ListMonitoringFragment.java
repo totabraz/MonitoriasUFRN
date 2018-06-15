@@ -1,9 +1,10 @@
-package totabraz.com.monitoriasufrn.fragments.monitoring;
+package totabraz.com.monitoriasufrn.fragments.monitoring.student;
 
 
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,7 +15,6 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,12 +22,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import totabraz.com.monitoriasufrn.R;
-import totabraz.com.monitoriasufrn.activities.MainActivity;
-import totabraz.com.monitoriasufrn.adapters.ListSubjectShortAdapter;
-import totabraz.com.monitoriasufrn.dao.UserDao;
+import totabraz.com.monitoriasufrn.adapters.ListMonitoringAdapter;
 import totabraz.com.monitoriasufrn.domain.Monitoring;
 import totabraz.com.monitoriasufrn.utils.FirebaseUtils;
 import totabraz.com.monitoriasufrn.utils.SysUtils;
@@ -35,14 +32,14 @@ import totabraz.com.monitoriasufrn.utils.SysUtils;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ListTurmasFragment extends Fragment {
+public class ListMonitoringFragment extends Fragment {
     private View rootView;
 
-    private ListSubjectShortAdapter mAdapter;
-    private String siape;
+    private ArrayList<Object> monitorings;
+    private ListMonitoringAdapter mAdapter;
     private Context mContext;
 
-    private HashMap<String, String> components;
+    private String componentToShow;
 
 
     private ProgressBar progress;
@@ -50,18 +47,28 @@ public class ListTurmasFragment extends Fragment {
     private TextView tvNothingToShow;
 
 
-    public static ListTurmasFragment newInstance() {
-        return new ListTurmasFragment();
+    public static ListMonitoringFragment newInstance() {
+        return new ListMonitoringFragment();
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        rootView = inflater.inflate(R.layout.fragment_list_prof_monitoring, container, false);
+        rootView = inflater.inflate(R.layout.fragment_list_monitoring, container, false);
+        monitorings = null;
+        componentToShow = null;
         mContext = getActivity().getApplicationContext();
-        siape = UserDao.getVinculoDefault(mContext).getIdentificador();
+        Bundle bundle = getArguments();
+        if (bundle!=null){
+            componentToShow = bundle.getString(SysUtils.KEY_COMPONENT);;
+        }
         setupViews();
         init();
         return rootView;
@@ -69,6 +76,7 @@ public class ListTurmasFragment extends Fragment {
 
 
     private void setupViews() {
+        monitorings = new ArrayList<>();
         rvMyList = rootView.findViewById(R.id.rvMyList);
         tvNothingToShow = rootView.findViewById(R.id.tvNothingToShow);
         progress = rootView.findViewById(R.id.progress);
@@ -78,28 +86,39 @@ public class ListTurmasFragment extends Fragment {
         progress.setVisibility(View.VISIBLE);
         tvNothingToShow.setVisibility(View.GONE);
         rvMyList.setVisibility(View.GONE);
-        getSubjects();
+        getMonitoring();
     }
 
 
-    private void getSubjects() {
-        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(FirebaseUtils.getAllMonitoring());
+    private void getMonitoring() {
+        DatabaseReference mDatabase;
+        if (componentToShow!=null) mDatabase = FirebaseDatabase.getInstance().getReference().child(FirebaseUtils.getAllMonitoring()).child(componentToShow);
+        else mDatabase = FirebaseDatabase.getInstance().getReference().child(FirebaseUtils.getAllMonitoring());
         ValueEventListener monitorListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                components = new HashMap<>();
+                monitorings = new ArrayList<>();
 
-                for (DataSnapshot objSnapshot : dataSnapshot.getChildren()) {
-                    getSubjectName(objSnapshot);
+                    for (DataSnapshot indexSnapshot : dataSnapshot.getChildren()) {
+
+                        for (DataSnapshot monitoringSnapshot : indexSnapshot.getChildren()) {
+                            String key = indexSnapshot.getKey();
+                            if (!monitorings.contains(key))monitorings.add(key);
+                            monitorings.add(monitoringSnapshot.getValue(Monitoring.class));
+
+
+                        }
+
                 }
 
-                if (components != null && components.size() > 0) {
+                if (monitorings != null && monitorings.size() > 0) {
                     RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(mContext);
-                    mAdapter = new ListSubjectShortAdapter(getActivity(),components);
+                    mAdapter = new ListMonitoringAdapter(mContext, monitorings);
                     rvMyList.setLayoutManager(mLayoutManager);
                     rvMyList.setItemAnimator(new DefaultItemAnimator());
                     rvMyList.setAdapter(mAdapter);
                 }
+
                 updateListMonitors();
             }
 
@@ -117,23 +136,11 @@ public class ListTurmasFragment extends Fragment {
         mDatabase.addValueEventListener(monitorListener);
     }
 
-    private void getSubjectName(DataSnapshot objSnapshot) {
-
-        for (DataSnapshot indexSnapshot : objSnapshot.getChildren()) {
-            String key = objSnapshot.getKey();
-            for (DataSnapshot monitoringSnapshot : indexSnapshot.getChildren()) {
-                components.put(key, monitoringSnapshot.getValue(Monitoring.class).getNomeComponente());
-                break;
-            }
-        }
-    }
-
     /**
      * First steps after to get Firebase Users.
      */
-
     private void updateListMonitors() {
-        if (components != null && components.size() > 0) {
+        if (monitorings != null && monitorings.size() > 0) {
             rvMyList.setVisibility(View.VISIBLE);
             tvNothingToShow.setVisibility(View.GONE);
             if (mAdapter != null) mAdapter.notifyDataSetChanged();
@@ -143,4 +150,5 @@ public class ListTurmasFragment extends Fragment {
         }
         progress.setVisibility(View.GONE);
     }
+
 }
