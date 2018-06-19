@@ -109,7 +109,6 @@ public class AddMonitoringActivity extends AppCompatActivity {
         }
     }
 
-
     private void setupViews() {
         ivAddMonitor = findViewById(R.id.ivAddMonitor);
         tvNomeMonitor = findViewById(R.id.tvNomeMonitor);
