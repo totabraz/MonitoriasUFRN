@@ -2,20 +2,15 @@ package totabraz.com.monitoriasufrn.utils;
 
 import android.content.Context;
 import android.util.Log;
-import android.widget.Toast;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
 import totabraz.com.monitoriasufrn.apisinfo.JApi;
-import totabraz.com.monitoriasufrn.domain.Monitor;
-import totabraz.com.monitoriasufrn.domain.Monitoring;
 
 public abstract class SysUtils {
 
@@ -66,42 +61,6 @@ public abstract class SysUtils {
     }
 
     /**
-     * HashMap to ArrayList
-     */
-    public static ArrayList<Monitor> getGetArrayMonitors(HashMap<String, Monitor> monitors) {
-        Collection<Monitor> values = monitors.values();
-        return new ArrayList<Monitor>(values);
-    }
-
-    public static ArrayList<Monitoring> getGetArrayMonitoring(HashMap<String, Monitoring> monitoring) {
-        Collection<Monitoring> values = monitoring.values();
-        return new ArrayList<Monitoring>(values);
-    }
-
-    /**
-     * Make toasts on a easier way
-     *
-     * @param context
-     * @param msgm
-     */
-
-    public static void shortToast(Context context, String msgm) {
-        notification(context, msgm, true);
-    }
-
-    public static void longToast(Context context, String msgm) {
-        notification(context, msgm, false);
-    }
-
-    private static void notification(Context context, String msgm, boolean shortTime) {
-        if (shortTime) {
-            Toast.makeText(context, msgm, Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(context, msgm, Toast.LENGTH_LONG).show();
-        }
-    }
-
-    /**
      * Methods to verify FirebaseAuth
      */
 
@@ -129,7 +88,6 @@ public abstract class SysUtils {
             case 6:
                 diaFinal = "Sábado";
         }
-
         return diaFinal;
     }
 }

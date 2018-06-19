@@ -22,7 +22,7 @@
     <color name="colorPrimaryLight">#5f5fc4</color>
 
     <color name="textWhite">#ffffff</color>
-    <color name="textWhiteDark">#414141</color>
+    <color name="textDark">#414141</color>
     <color name="textWhiteLight">#888</color>
 
     <color name="bg_white_dark">#f0f5f5</color>

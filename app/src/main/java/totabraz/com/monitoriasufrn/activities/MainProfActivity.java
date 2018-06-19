@@ -17,12 +17,14 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 import totabraz.com.monitoriasufrn.R;
 import totabraz.com.monitoriasufrn.activities.addmonitoring.AddMonitoringActivity;
 import totabraz.com.monitoriasufrn.dao.UserDao;
+import totabraz.com.monitoriasufrn.domain.User;
 import totabraz.com.monitoriasufrn.fragments.monitoring.prof.ListProfTurmasFragment;
 
 
@@ -33,6 +35,7 @@ public class MainProfActivity extends AppCompatActivity
     private Toolbar toolbar;
     private Fragment fragment;
     private FragmentTransaction ft;
+    private User user;
 
     private void drawerPreset() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout_prof);
@@ -43,13 +46,21 @@ public class MainProfActivity extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view_prof);
         navigationView.setNavigationItemSelectedListener(this);
+
+        View headerView = navigationView.getHeaderView(0);
+        TextView navProf = (TextView) headerView.findViewById(R.id.tvNameProf);
+        TextView navSiape = (TextView) headerView.findViewById(R.id.tvSiape);
+        navProf.setText(this.user.getNomePessoa());
+        navSiape.setText("Siape: "+ UserDao.getVinculoDefault(getApplicationContext()).getIdentificador());
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_prof);
+        this.user = UserDao.getLocalUser(getApplicationContext());
         toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle(user.getNomePessoa());
         setSupportActionBar(toolbar);
 
         this.drawerPreset();
