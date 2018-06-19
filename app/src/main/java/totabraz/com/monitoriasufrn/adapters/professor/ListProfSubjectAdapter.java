@@ -17,14 +17,14 @@ import totabraz.com.monitoriasufrn.R;
 import totabraz.com.monitoriasufrn.fragments.monitoring.prof.ListProfMonitoringFragment;
 import totabraz.com.monitoriasufrn.utils.SysUtils;
 
-public class ListProfSubjectShortAdapter extends RecyclerView.Adapter<ListProfSubjectShortAdapter.Holder> {
+public class ListProfSubjectAdapter extends RecyclerView.Adapter<ListProfSubjectAdapter.Holder> {
     private Activity mActivity;
     private ArrayList<String> keys;
     private HashMap<String, String> components;
 
     private View rootView;
 
-    public ListProfSubjectShortAdapter(Activity activity, HashMap<String, String> components) {
+    public ListProfSubjectAdapter(Activity activity, HashMap<String, String> components) {
         this.keys = new ArrayList<String >(components.keySet());
         this.components = components;
         this.mActivity = activity;

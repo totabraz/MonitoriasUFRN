@@ -1,5 +1,6 @@
 package totabraz.com.monitoriasufrn.activities.addmonitoring;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
@@ -27,9 +28,12 @@ import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
+import okhttp3.internal.Util;
 import totabraz.com.monitoriasufrn.R;
 import totabraz.com.monitoriasufrn.dao.UserDao;
 import totabraz.com.monitoriasufrn.domain.Monitor;
@@ -79,16 +83,32 @@ public class AddMonitoringActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_monitoring);
+
+        /**
+         * IMPORTANT - to check the component
+         */
         Date date = new Date();
-//        Calendar calendar = new GregorianCalendar();
-//        calendar.setTime(date);
-//        year = String.valueOf(calendar.get(Calendar.YEAR));
+        Calendar calendar = new GregorianCalendar();
+        calendar.setTime(date);
+        year = String.valueOf(calendar.get(Calendar.YEAR));
         getSupportActionBar().hide();//Ocultar ActivityBar anterior
         idVinculo = UserDao.getVinculoDefault(getApplicationContext()).getIdVinculo();
         setupViews();
         cleanForm();
 
+        /**
+         * IMPORTANT - Have to be after setupViews()
+         */
+        Bundle bundle = getIntent().getExtras();
+        if (bundle !=null){
+            if (bundle.get(SysUtils.KEY_COMPONENT)!=null){
+                lastCodigoComponent = bundle.getString(SysUtils.KEY_COMPONENT);
+                tiCodComponent.setText(lastCodigoComponent);
+                new GetTurma().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+            }
+        }
     }
+
 
     private void setupViews() {
         ivAddMonitor = findViewById(R.id.ivAddMonitor);
@@ -209,7 +229,6 @@ public class AddMonitoringActivity extends AppCompatActivity {
         if (horarioN3.isChecked()) turnoN += "3";
         if (horarioN4.isChecked()) turnoN += "4";
         if (turnoN.length() > 0) turnoN = "N" + turnoN;
-
         return turnoM + turnoT + turnoN;
     }
 

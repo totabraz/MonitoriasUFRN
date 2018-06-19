@@ -99,6 +99,7 @@ public class ListProfMonitoringFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(mContext, AddMonitoringActivity.class);
+                    intent.putExtra(SysUtils.KEY_COMPONENT,componentToShow);
                     if (Integer.parseInt(UserDao.getVinculoDefault(mContext).getIdTipoVinculo()) == TipoVinculoEnum.DOCENTE.ordinal()) {
                         intent.putExtra(SysUtils.KEY_PROFESSOR, true);
                     }

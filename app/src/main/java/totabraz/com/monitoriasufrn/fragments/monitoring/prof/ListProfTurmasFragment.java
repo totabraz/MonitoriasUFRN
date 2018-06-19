@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 
 import totabraz.com.monitoriasufrn.R;
-import totabraz.com.monitoriasufrn.adapters.professor.ListProfSubjectShortAdapter;
+import totabraz.com.monitoriasufrn.adapters.professor.ListProfSubjectAdapter;
 import totabraz.com.monitoriasufrn.dao.UserDao;
 import totabraz.com.monitoriasufrn.domain.Monitoring;
 import totabraz.com.monitoriasufrn.utils.FirebaseUtils;
@@ -34,7 +34,7 @@ import totabraz.com.monitoriasufrn.utils.FirebaseUtils;
 public class ListProfTurmasFragment extends Fragment {
     private View rootView;
 
-    private ListProfSubjectShortAdapter mAdapter;
+    private ListProfSubjectAdapter mAdapter;
     private String siape;
     private Context mContext;
 
@@ -91,7 +91,7 @@ public class ListProfTurmasFragment extends Fragment {
 
                 if (components != null && components.size() > 0) {
                     RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(mContext);
-                    mAdapter = new ListProfSubjectShortAdapter(getActivity(),components);
+                    mAdapter = new ListProfSubjectAdapter(getActivity(),components);
                     rvMyList.setLayoutManager(mLayoutManager);
                     rvMyList.setItemAnimator(new DefaultItemAnimator());
                     rvMyList.setAdapter(mAdapter);

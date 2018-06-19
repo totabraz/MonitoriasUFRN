@@ -24,7 +24,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.subjects.SubjectActivity" />
         <activity android:name=".activities.setup.LoginActivity"></activity>
         <activity android:name=".activities.setup.SetupUserActivity" />
         <activity android:name=".activities.setup.SetupFirebaseActivity" />
