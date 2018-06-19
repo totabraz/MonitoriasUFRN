@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 import totabraz.com.monitoriasufrn.R;
 import totabraz.com.monitoriasufrn.domain.Monitoring;
+import totabraz.com.monitoriasufrn.utils.FirebaseUtils;
 import totabraz.com.monitoriasufrn.utils.SysUtils;
 
 public class ListProfMonitoringAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -69,21 +70,31 @@ public class ListProfMonitoringAdapter extends RecyclerView.Adapter<RecyclerView
                 break;
             case 1:
                 HolderMonitoring holderMonitoring = (HolderMonitoring) holder;
-                Monitoring monitoring = (Monitoring) monitorings.get(position);
+                final Monitoring monitoring = (Monitoring) monitorings.get(position);
                 holderMonitoring.tvTurma.setText(monitoring.getNomeComponente());
                 holderMonitoring.tvSector.setText(monitoring.getSetor());
                 holderMonitoring.tvClass.setText(monitoring.getSala());
                 holderMonitoring.tvMonitor.setText(monitoring.getMonitor().getNomePessoa());
                 holderMonitoring.tvTime.setText(monitoring.getClassTime());
+                holderMonitoring.ivBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        FirebaseUtils.removeMonitoring(mContext, monitoring);
+                    }
+                });
                 if (cpfMonitor != null) {
                     holderMonitoring.ivBtn.setVisibility(View.VISIBLE);
+
+
+/*
                     holderMonitoring.ivBtn.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
+
                             monitorings.remove(position);
 
                         }
-                    });
+                    });*/
                 }
                 break;
         }

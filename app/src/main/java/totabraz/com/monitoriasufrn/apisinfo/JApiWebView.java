@@ -3,6 +3,7 @@ package totabraz.com.monitoriasufrn.apisinfo;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
@@ -10,8 +11,10 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ProgressBar;
 
 import ca.mimic.oauth2library.OAuthResponse;
+import totabraz.com.monitoriasufrn.R;
 import totabraz.com.monitoriasufrn.apisinfo.asynctask.AuthorizationTask;
 import totabraz.com.monitoriasufrn.apisinfo.constants.Generic;
 import totabraz.com.monitoriasufrn.apisinfo.constants.Parameters;
@@ -60,6 +63,13 @@ public class JApiWebView extends WebView implements AsyncResponse {
         progressDialog = ProgressDialog.show(getContext(), "Japi Authorization", "Carregando...", true);
 
         setWebViewClient(new WebViewClient() {
+            @Override
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                super.onPageStarted(view, url, favicon);
+                ProgressBar progressBar = myActivity.findViewById(R.id.progress);
+                progressBar.setVisibility(GONE);
+            }
+
             @Override
             public void onPageFinished(WebView view, String url) {
                 if (progressDialog != null && progressDialog.isShowing()) {

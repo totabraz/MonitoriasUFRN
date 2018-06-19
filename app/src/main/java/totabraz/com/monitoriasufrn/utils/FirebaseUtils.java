@@ -114,6 +114,12 @@ public abstract class FirebaseUtils {
         mDatabase.setValue(cpf);
     }
 
+    private static void removeMonitorAtMonitorsfList(String siape, String cpf, String monitoringCode) {
+        String rootDir = MONITORS_ROOT + "/" + cpf + "/" + siape;
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(rootDir);
+        mDatabase.removeValue();
+    }
+
     private static void addMonitorAtMonitorsfList(String siape, String cpf, String monitoringCode) {
         String rootDir = MONITORS_ROOT + "/" + cpf + "/" + siape;
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(rootDir);
@@ -175,5 +181,64 @@ public abstract class FirebaseUtils {
     public static String getAllMonitoring() {
         return  MONITORING_ROOT;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    private static void removeMonitoringAtGeralList(String key, Monitoring monitoring) {
+        String rootDir = MONITORING_ROOT + monitoring.getCodigoComponente() + "/" + monitoring.getDia() + "/" + key;
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(rootDir);
+        mDatabase.removeValue();
+    }
+
+    private static void removeMonitoringAtProfList(String siape, String monitoringCode) {
+        String rootDir = PROFESSOR_ROOT + MONITORING + siape + "/" + monitoringCode;
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(rootDir);
+        mDatabase.removeValue();
+    }
+
+    private static void removeMonitoringAtMonitorList(String siape, String cpf, String monitoringCode) {
+        String rootDir = MONITORS_ROOT;
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(rootDir);
+        String monitorsRoot =  MONITORING + cpf+ "/" + siape + "/" + monitoringCode;
+        mDatabase.child(monitorsRoot).removeValue();
+        String infoRoot =  INFO + cpf;
+        mDatabase.child(infoRoot).removeValue();
+    }
+
+    public static void removeMonitoring(Context mContext, Monitoring monitoring) {
+        String dia = monitoring.getDia();
+        String codComp = monitoring.getCodigoComponente();
+        String siape = UserDao.getVinculoDefault(mContext).getIdentificador();
+        String cpf = monitoring.getMonitor().getCpfCnpj();
+        String turno = monitoring.getClassTime();
+
+        String monitoringCode = dia + SPACER_KEY + codComp + SPACER_KEY + siape + SPACER_KEY + cpf + SPACER_KEY + turno;
+
+        removeMonitoringAtGeralList(monitoringCode, monitoring);
+        removeMonitoringAtProfList(siape, monitoringCode);
+        removeMonitoringAtMonitorList(siape, cpf, monitoringCode);
+        removeMonitorAtMonitorsfList(siape, monitoring.getMonitor().getCpfCnpj(), monitoringCode);
+    }
+
+
+
+
+
+
 
 }
