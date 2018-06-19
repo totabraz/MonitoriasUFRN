@@ -20,6 +20,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -33,6 +34,7 @@
             android:name=".activities.MainProfActivity"
             android:label="@string/title_activity_main_teacher"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activities.ReportActivity"></activity>
     </application>
 
 </manifest>
