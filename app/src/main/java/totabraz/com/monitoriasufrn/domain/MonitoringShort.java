@@ -1,5 +1,7 @@
 package totabraz.com.monitoriasufrn.domain;
 
+//Não faço javadoc poeque sou chato
+
 public class MonitoringShort {
 
     private String codigoComponente;
